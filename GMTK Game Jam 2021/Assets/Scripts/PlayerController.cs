@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public CameraMove gameCamera;
     public float playerSpeed = 1;
     Rigidbody2D playerRigidbody;
+    Vector3 prevPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         var cameraPos = gameCamera.GetCameraPos();
-        var target = new Vector3(cameraPos.x, cameraPos.y);
+        var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
         if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 1.0f)
         {
