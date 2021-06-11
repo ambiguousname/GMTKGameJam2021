@@ -10,9 +10,11 @@ Mouse Boundaries, Scrolling
 
 Overall Goals:
 Make a buffer space for the main character to follow the camera without decrementing the timer.
+Camera Flashing
 Levels
 Easy Restart for Levels
 Playtesting
+More Enemies?
 Game Options
 Pause Menu
 Better Art

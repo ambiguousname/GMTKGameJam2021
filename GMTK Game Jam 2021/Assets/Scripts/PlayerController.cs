@@ -35,6 +35,14 @@ public class PlayerController : MonoBehaviour
         pickupUpdate = true;
     }
 
+    public bool ObjectInFrame(Vector3 objectPosition) {
+        return gameCamera.GetInFrame(objectPosition);
+    }
+
+    public void RegisterBulletHit() {
+        distanceTimer -= 0.5f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -67,7 +75,16 @@ public class PlayerController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
         if (pickupUpdate) {
-            currentPickup.PickupUpdate(this);
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            var visibleEnemies = new List<GameObject>();
+            foreach (GameObject enemy in enemies)
+            {
+                if (ObjectInFrame(enemy.transform.position))
+                {
+                    visibleEnemies.Add(enemy);
+                }
+            }
+            currentPickup.PickupUpdate(this, visibleEnemies);
         }
     }
 }

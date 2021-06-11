@@ -9,7 +9,7 @@ public class Pickup : ScriptableObject
         return;
     }
 
-    public virtual void PickupUpdate(PlayerController player) {
+    public virtual void PickupUpdate(PlayerController player, List<GameObject> visibleEnemiesList) {
         return;
     }
 }

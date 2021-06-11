@@ -17,7 +17,7 @@ public class Pistol : Pickup
         return;
     }
 
-    public override void PickupUpdate(PlayerController player)
+    public override void PickupUpdate(PlayerController player, List<GameObject> visibleEnemiesList)
     {
         pistolSprite.transform.position = player.transform.GetChild(0).position;
     }

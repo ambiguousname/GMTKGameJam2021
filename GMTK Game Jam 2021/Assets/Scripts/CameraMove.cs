@@ -21,6 +21,11 @@ public class CameraMove : MonoBehaviour
         return MainCamera.ScreenToWorldPoint(this.transform.position);
     }
 
+    public bool GetInFrame(Vector3 position) {
+        var localPos = MainCamera.WorldToScreenPoint(position);
+        return GetComponent<RectTransform>().rect.Contains(localPos);
+    }
+
     // Update is called once per frame
     void Update()
     {
