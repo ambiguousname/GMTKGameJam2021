@@ -1,6 +1,4 @@
 Goals Leading Up To Lunch:
-Get camera set up and player following the camera.
-
 
 Goals Leading Up To Dinner:
 Player weapons, enemies and enemy weapons.
