@@ -9,6 +9,7 @@ Goals for the End of the Day:
 Mouse Boundaries, Scrolling
 
 Overall Goals:
+Make a buffer space for the main character to follow the camera without decrementing the timer.
 Levels
 Easy Restart for Levels
 Playtesting

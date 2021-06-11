@@ -21,3 +21,4 @@ them.
 - Fog of war revealed by main character?
 - Game camera zooms in with regular camera?
 - Scroll by moving mouse to edge?
+- Bullets don't hit player health, they hit your timer (Call it "Audience Interest").

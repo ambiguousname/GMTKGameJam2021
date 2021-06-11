@@ -494,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299575510}
   - component: {fileID: 1299575511}
+  - component: {fileID: 1299575512}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -566,6 +567,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1299575512
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299575509}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1302557696
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 462069720972159975, guid: 9e01e9b5ad2c3da47821dd6e2827d1ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.88
+      objectReference: {fileID: 0}
     - target: {fileID: 1784223113865241928, guid: 9e01e9b5ad2c3da47821dd6e2827d1ee, type: 3}
       propertyPath: m_RootOrder
       value: 4

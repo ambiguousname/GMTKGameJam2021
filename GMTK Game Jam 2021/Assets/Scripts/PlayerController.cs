@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public CameraMove gameCamera;
     public Image timerSlider;
+    [Header("Gameplay Stuff")]
     public float playerSpeed = 1;
+    public float minAccuracy = 1.0f;
+    public float maxAccuracy = 10.0f;
     Rigidbody2D playerRigidbody;
 
     // Stuff for the timer:

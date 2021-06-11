@@ -13,11 +13,12 @@ public class Pistol : Pickup
     public override void OnPickup(PlayerController player)
     {
         pistolSprite = Instantiate(pistolPrefab);
-        pistolSprite.transform.position = player.transform.position;
+        pistolSprite.transform.position = player.transform.GetChild(0).position;
         return;
     }
 
     public override void PickupUpdate(PlayerController player)
     {
+        pistolSprite.transform.position = player.transform.GetChild(0).position;
     }
 }

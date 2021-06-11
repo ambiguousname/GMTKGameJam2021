@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   rateOfFire: 1
+  pistolPrefab: {fileID: 7112296568256397822, guid: 9b29feb3d04642c4f8d9609859c5a528, type: 3}
