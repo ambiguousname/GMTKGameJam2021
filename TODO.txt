@@ -1,6 +1,7 @@
 Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
+Timer when main character is away from camera.
 Player weapons, enemies and enemy weapons.
 Killing capabilities.
 Fix Player Movement
@@ -11,8 +12,10 @@ Goals for the End of the Day:
 
 Overall Goals:
 Levels
+Easy Restart for Levels
 Playtesting
+Game Options
+Pause Menu
 Better Art
 Game Juice (Sound Effects Included)
-Game Options
 Start screen
