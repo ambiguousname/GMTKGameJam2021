@@ -13,18 +13,31 @@ public class Enemy : MonoBehaviour
     public float fireTimerLength = 5.0f;
     public float weaponRange = 10.0f;
     public float weaponSpeed = 10.0f;
+    public float minAccuracy = 5.0f;
+    public float maxAccuracy = 90.0f;
+    public float startAccuracy = 90.0f;
+    public float currentAccuracy {
+        get {
+            return accuracy;
+        }
+        set {
+            accuracy = Mathf.Clamp(value, minAccuracy, maxAccuracy);
+        }
+    }
+    private float accuracy;
 
     private float fireTimer;
     void Start()
     {
         fireTimer = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        accuracy = startAccuracy;
     }
 
     public void Fire(Vector3 positionToShoot) {
         var bullet = Instantiate(bulletPrefab);
         bullet.transform.position = this.transform.position;
-        var target = positionToShoot - this.transform.position;
+        var target = new Vector3(positionToShoot.x + Random.Range(-25.0f, 25.0f)/accuracy, positionToShoot.y + Random.Range(-25.0f, 25.0f)/accuracy, positionToShoot.z) - this.transform.position;
         target.Normalize();
         bullet.GetComponent<Rigidbody2D>().AddForce(target * weaponSpeed);
     }

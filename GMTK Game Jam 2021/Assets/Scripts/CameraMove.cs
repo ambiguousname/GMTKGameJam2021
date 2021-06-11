@@ -7,6 +7,10 @@ public class CameraMove : MonoBehaviour
     public float maxSize = 2;
     public float minSize = 0.4f;
     public float currentSize = 1;
+    /// <summary>
+    /// How much the camera's size buffs player accuracy and debuffs enemy accuracy. (Calculation is accuracy - sizeAccuracy * (1/currentSize)))
+    /// </summary>
+    public float sizeAccuracy = 80.0f;
     public Camera MainCamera;
     private Vector3 baseScale;
     // Start is called before the first frame update
@@ -23,7 +27,10 @@ public class CameraMove : MonoBehaviour
 
     public bool GetInFrame(Vector3 position) {
         var localPos = MainCamera.WorldToScreenPoint(position);
-        return GetComponent<RectTransform>().rect.Contains(localPos);
+        var testPos = new Vector3(localPos.x, localPos.y, -1.0f);
+        // We subtract our rect transform's position because the rectangle's boundaries itself are static, meaning we need a way
+        // to get the testPosition relative to our rect.
+        return GetComponent<RectTransform>().rect.Contains(testPos - GetComponent<RectTransform>().position);
     }
 
     // Update is called once per frame

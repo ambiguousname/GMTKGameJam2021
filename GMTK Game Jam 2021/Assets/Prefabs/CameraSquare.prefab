@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 2
   minSize: 1
+  currentSize: 1
+  sizeAccuracy: 80
   MainCamera: {fileID: 0}
 --- !u!1 &6866951772701779078
 GameObject:

@@ -9,8 +9,22 @@ public class PlayerController : MonoBehaviour
     public Image timerSlider;
     [Header("Gameplay Stuff")]
     public float playerSpeed = 1;
-    public float minAccuracy = 1.0f;
-    public float maxAccuracy = 10.0f;
+    public float minAccuracy = 20.0f;
+    public float maxAccuracy = 100.0f;
+    public float startAccuracy = 40.0f;
+    public float currentAccuracy
+    {
+        get
+        {
+            return accuracy;
+        }
+        set
+        {
+            accuracy = Mathf.Clamp(value, minAccuracy, maxAccuracy);
+        }
+    }
+    private float accuracy;
+
     Rigidbody2D playerRigidbody;
 
     // Stuff for the timer:
@@ -27,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         distanceTimer = distanceTimerInit;
+        accuracy = startAccuracy;
     }
 
     public void SetPickup(Pickup newPickup) {
@@ -46,6 +61,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
         var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
@@ -74,16 +90,22 @@ public class PlayerController : MonoBehaviour
         if (distanceTimer < 0) {
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
-        if (pickupUpdate) {
-            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            var visibleEnemies = new List<GameObject>();
-            foreach (GameObject enemy in enemies)
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        var visibleEnemies = new List<GameObject>();
+        foreach (GameObject enemy in enemies)
+        {
+            if (ObjectInFrame(enemy.transform.position))
             {
-                if (ObjectInFrame(enemy.transform.position))
-                {
-                    visibleEnemies.Add(enemy);
-                }
+                visibleEnemies.Add(enemy);
+                var eComponent = enemy.GetComponent<Enemy>();
+                eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / gameCamera.currentSize);
             }
+            else if (enemy.GetComponent<Enemy>().currentAccuracy != enemy.GetComponent<Enemy>().startAccuracy)
+            {
+                enemy.GetComponent<Enemy>().currentAccuracy = enemy.GetComponent<Enemy>().startAccuracy;
+            }
+        }
+        if (pickupUpdate) {
             currentPickup.PickupUpdate(this, visibleEnemies);
         }
     }
