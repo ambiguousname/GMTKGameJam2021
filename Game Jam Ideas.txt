@@ -1,0 +1,19 @@
+You are the camera in an action movie/TV show. Your job is to direct the action of the movie so that
+the main character survives and everybody else dies.
+
+Name Idea: Lights, Camera, Competence
+
+Gameplay:
+- You use the mouse to change what the camera is looking at.
+- Zoom in and out with the scroll wheel (maybe don't use?).
+- Click to flash the camera.
+- Right click for slow-motion (or maybe to stop the main character from moving)?
+- If the camera is not on the main character, a timer ticks down.
+- If you lose focus of the main character for long enough or the main character dies, it's
+game over.
+- The main character automatically navigates to be within the camera's line of sight.
+- The main character will pick up weapons it runs over on the way to your camera.
+- Your camera also has an effect on how the main character or enemies perform. Enemies will
+normally be very accurate (maybe get rid of this accuracy with the camera flash or just
+focusing on them)? And the player will normally suck at killing things unless the camera is focused on
+them.
