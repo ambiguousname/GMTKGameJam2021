@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Pickup pickupType;
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(collision.gameObject.tag == "Player");
+        if (collision.gameObject.tag == "Player") {
+            collision.gameObject.GetComponent<PlayerController>().SetPickup(pickupType);
+            Destroy(gameObject);
+        }
     }
 }

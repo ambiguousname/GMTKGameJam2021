@@ -5,7 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Pickup", menuName ="PickupData/Pickup")]
 public class Pickup : ScriptableObject
 {
-    public virtual void OnPickup(PlayerController player) { 
-    
+    public virtual void OnPickup(PlayerController player) {
+        return;
+    }
+
+    public virtual void PickupUpdate(PlayerController player) {
+        return;
     }
 }
