@@ -1,12 +1,11 @@
 Goals Leading Up To Lunch:
-Revise accuracy and player movement to feel more fun to play with
 Levels (Win State, Next Level)
 More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
 More Levels
 
 Goals Leading Up To Dinner:
 Playtesting
-Polish and revision
+Polish and revision (Accuracy still, and maybe think about how loss of accuracy is better conveyed)
 
 Goals for the End of the Day:
 

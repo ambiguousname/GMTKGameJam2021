@@ -29,7 +29,7 @@ public class BulletController : MonoBehaviour
         this.transform.position = shootFrom;
         var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
         target.Normalize();
-        target += new Vector3(Random.Range(-25.0f, 25.0f) / accuracy,  Random.Range(-25.0f, 25.0f)/ accuracy);
+        target += new Vector3(Random.Range(-5.0f, 5.0f) / accuracy,  Random.Range(-5.0f, 5.0f)/ accuracy);
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
     }
@@ -43,6 +43,7 @@ public class BulletController : MonoBehaviour
                 other.gameObject.GetComponent<PlayerController>().RegisterBulletHit();
             }
             if (other.gameObject.tag == "Enemy") {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().dTimer += 0.5f;
                 Destroy(other.gameObject);
             }
             GetComponent<SpriteRenderer>().enabled = false;

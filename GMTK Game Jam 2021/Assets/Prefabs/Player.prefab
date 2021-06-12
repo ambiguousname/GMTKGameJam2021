@@ -130,11 +130,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 0}
+  loseMenu: {fileID: 0}
   timerSlider: {fileID: 0}
   playerSpeed: 2
   minAccuracy: 20
   maxAccuracy: 100
-  startAccuracy: 20
+  startAccuracy: 50
+  accuracy: 0
   distanceTimerInit: 5
   pickupUpdate: 0
 --- !u!61 &1522467396464901512

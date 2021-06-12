@@ -46,7 +46,7 @@ public class Pistol : Pickup
                 var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
                 var mask = LayerMask.GetMask("Enemies", "Obstacles");
                 RaycastHit2D hit = Physics2D.Raycast(bulletsOut, closestEnemy.transform.position - bulletsOut, range, mask);
-                if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 90)
+                if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 180)
                 {
                     if (hit.transform.tag == "Enemy" && fireTimer <= 0)
                     {

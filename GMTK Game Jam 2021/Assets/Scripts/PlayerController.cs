@@ -24,13 +24,23 @@ public class PlayerController : MonoBehaviour
             accuracy = Mathf.Clamp(value, minAccuracy, maxAccuracy);
         }
     }
-    private float accuracy;
+    public float accuracy;
 
     Rigidbody2D playerRigidbody;
 
     // Stuff for the timer:
     private float distanceTimer;
     public float distanceTimerInit = 5.0f;
+    public float dTimer
+    {
+        get {
+            return distanceTimer;
+        }
+        set {
+            timerSlider.color = new Color(timerSlider.color.r, timerSlider.color.g + (value - distanceTimer) * 10.0f * Time.deltaTime, timerSlider.color.b + (value - distanceTimer) * 10.0f * Time.deltaTime);
+            distanceTimer = Mathf.Clamp(value, -5, distanceTimerInit);
+        }
+    }
 
     // To handle weapons:
     private Pickup currentPickup;
@@ -62,8 +72,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
-        var cameraPos = gameCamera.GetCameraPos();
+        if (ObjectInFrame(this.transform.position))
+        {
+            currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
+        }
+        else {
+            currentAccuracy = startAccuracy;
+        }
+            var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
         if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5/2 * GetComponent<Rigidbody2D>().drag)
