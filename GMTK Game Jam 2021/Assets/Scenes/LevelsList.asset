@@ -20,5 +20,6 @@ MonoBehaviour:
   - Chased
   - Hallway
   - Winding
+  - Flanked
   - WreckingIntro
   - YouWin

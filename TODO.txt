@@ -2,7 +2,7 @@ Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
 Even More Levels
-Add Wrecking Ball Weapon (Spin randomly and fire lots of bullets)
+Make sure all levels are in build settings.
 
 Goals for the End of the Day:
 Win screen
