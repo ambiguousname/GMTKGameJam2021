@@ -5,7 +5,7 @@ Goals Leading Up To Dinner:
 
 Goals for the End of the Day:
 More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
-Levels (Lose State, Win State, Next Level)
+Levels (Win State, Next Level)
 
 Overall Goals:
 Finish Early Levels
@@ -17,6 +17,8 @@ Clean up debug stuff
 Game Options
 Pause Menu
 Better Art
-Game Juice (Sound Effects Included)
+Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
+Use clapperboard every level start
 Post Processing
 Start screen
+Itch.io page and submission

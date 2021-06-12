@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public CameraMove gameCamera;
+    public GameObject loseMenu;
     public Image timerSlider;
     [Header("Gameplay Stuff")]
     public float playerSpeed = 1;
@@ -90,8 +91,10 @@ public class PlayerController : MonoBehaviour
             timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
         }
 
-        if (distanceTimer < 0) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        if (distanceTimer < 0 && !GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused) {
+            GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
+            GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = false;
+            loseMenu.SetActive(true);
         }
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         var visibleEnemies = new List<GameObject>();

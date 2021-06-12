@@ -49,47 +49,58 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var img = GetComponent<Image>();
-        if (Input.GetMouseButton(0))
+        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = false;
-        }
-        if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f) {
-            img.color = new Color(img.color.r + 0.7f, img.color.g + 0.7f, img.color.b + 0.7f, img.color.a + 0.7f);
-            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject enemy in enemies) {
-                if (GetInFrame(enemy.transform.position)) {
-                    enemy.GetComponent<Enemy>().SetStunned();
+            var img = GetComponent<Image>();
+            if (Input.GetMouseButton(0))
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = false;
+            }
+            if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f)
+            {
+                img.color = new Color(img.color.r + 0.7f, img.color.g + 0.7f, img.color.b + 0.7f, img.color.a + 0.7f);
+                var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach (GameObject enemy in enemies)
+                {
+                    if (GetInFrame(enemy.transform.position))
+                    {
+                        enemy.GetComponent<Enemy>().SetStunned();
+                    }
                 }
             }
-        }
-        if (img.color.a > 0.38f) {
-            img.color = new Color(img.color.r - 0.7f * Time.deltaTime, img.color.g - 0.7f * Time.deltaTime, img.color.b - 0.7f * Time.deltaTime, img.color.a - 0.7f * Time.deltaTime);
-        }
-        this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
-        var scaleChange = Input.GetAxis("Mouse ScrollWheel");
-        currentSize -= scaleChange;
-        if (Vector3.Magnitude(baseScale * currentSize) > Vector3.Magnitude(baseScale * maxSize))
-        {
-            currentSize += scaleChange;
-        }
-        else if (Vector3.Magnitude(baseScale * currentSize) < Vector3.Magnitude(baseScale * minSize)) {
-            currentSize += scaleChange;
-        }
-        this.transform.localScale = baseScale * currentSize;
-        if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 4)
-        {
-            MoveCamera(new Vector3(0, 1));
-        }
-        if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 4) {
-            MoveCamera(new Vector3(0, -1));
-        }
-        if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 4) {
-            MoveCamera(new Vector3(1, 0));
-        }
-        if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 4) {
-            MoveCamera(new Vector3(-1, 0));
+            if (img.color.a > 0.38f)
+            {
+                img.color = new Color(img.color.r - 0.7f * Time.deltaTime, img.color.g - 0.7f * Time.deltaTime, img.color.b - 0.7f * Time.deltaTime, img.color.a - 0.7f * Time.deltaTime);
+            }
+            this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
+            var scaleChange = Input.GetAxis("Mouse ScrollWheel");
+            currentSize -= scaleChange;
+            if (Vector3.Magnitude(baseScale * currentSize) > Vector3.Magnitude(baseScale * maxSize))
+            {
+                currentSize += scaleChange;
+            }
+            else if (Vector3.Magnitude(baseScale * currentSize) < Vector3.Magnitude(baseScale * minSize))
+            {
+                currentSize += scaleChange;
+            }
+            this.transform.localScale = baseScale * currentSize;
+            if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 4)
+            {
+                MoveCamera(new Vector3(0, 1));
+            }
+            if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 4)
+            {
+                MoveCamera(new Vector3(0, -1));
+            }
+            if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 4)
+            {
+                MoveCamera(new Vector3(1, 0));
+            }
+            if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 4)
+            {
+                MoveCamera(new Vector3(-1, 0));
+            }
         }
     }
 }
