@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a63d5f91087de48ae3444997f979fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 2
+  maxSize: 2.3
   minSize: 1
-  currentSize: 1
+  currentSize: 1.5
   sizeAccuracy: 50
   MainCamera: {fileID: 0}
 --- !u!1 &6866951772701779078

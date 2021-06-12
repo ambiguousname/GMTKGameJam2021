@@ -38,6 +38,11 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         var img = GetComponent<Image>();
+        if (Input.GetMouseButton(0))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
         if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f) {
             img.color = new Color(img.color.r + 0.7f, img.color.g + 0.7f, img.color.b + 0.7f, img.color.a + 0.7f);
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
