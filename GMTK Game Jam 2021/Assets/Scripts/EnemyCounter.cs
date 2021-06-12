@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EnemyCounter : MonoBehaviour
 {
-    public string NextScene;
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +15,7 @@ public class EnemyCounter : MonoBehaviour
             if (eCount <= 0)
             {
                 TakeCount.currentScene += 1;
-                UnityEngine.SceneManagement.SceneManager.LoadScene(NextScene);
+                GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
             }
         }
     }

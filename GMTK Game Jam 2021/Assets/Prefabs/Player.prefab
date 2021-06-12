@@ -133,6 +133,7 @@ MonoBehaviour:
   loseMenu: {fileID: 0}
   timerSlider: {fileID: 0}
   playerSpeed: 2
+  maxSpeed: 10
   minAccuracy: 20
   maxAccuracy: 100
   startAccuracy: 50

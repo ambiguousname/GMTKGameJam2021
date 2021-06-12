@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Image timerSlider;
     [Header("Gameplay Stuff")]
     public float playerSpeed = 1;
+    public float maxSpeed = 5;
     public float minAccuracy = 20.0f;
     public float maxAccuracy = 100.0f;
     public float startAccuracy = 40.0f;
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
                 distanceTimer -= Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
             }
-            if (!Input.GetMouseButton(1))
+            if (!Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
             {
                 playerRigidbody.AddForce(target * playerSpeed);
             }

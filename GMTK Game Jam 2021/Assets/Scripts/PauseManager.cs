@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
+    public string NextScene;
+    public GameObject winMenu;
     public bool isPaused { 
         get {
             return paused;
@@ -47,5 +49,15 @@ public class PauseManager : MonoBehaviour
     public void RestartLevel() {
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    public void GetWin() {
+        PauseGame();
+        canUnpause = false;
+        winMenu.SetActive(true);
+    }
+
+    public void GetNextScene() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(NextScene);
     }
 }
