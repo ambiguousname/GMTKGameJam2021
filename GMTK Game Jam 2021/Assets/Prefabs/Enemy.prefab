@@ -127,6 +127,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2936819903926852095, guid: 747932b65eb03314cbb468fdaeb8a9cf, type: 3}
   player: {fileID: 0}
   fireTimerLength: 1
+  bulletsPerSecond: 1
   weaponRange: 10
   weaponSpeed: 500
   minAccuracy: 5
@@ -134,6 +135,8 @@ MonoBehaviour:
   startAccuracy: 90
   enemyDamage: 0.5
   stunDuration: 3
+  health: 1
+  hitSprite: {fileID: 21300000, guid: 397db8278703c0740987360dd4852aa5, type: 3}
   isVisible: 0
   fireTimer: 0
 --- !u!50 &3352217452581591430

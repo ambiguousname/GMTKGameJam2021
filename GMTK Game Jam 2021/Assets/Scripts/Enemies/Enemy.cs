@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
 
     private float stunTimer;
     private float bulletTimer = 0;
+    Sprite initialSprite;
+
+    public Sprite hitSprite;
 
     public bool isVisible = false;
     public float currentAccuracy {
@@ -47,6 +50,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         fireTimer = 0;
+        initialSprite = GetComponent<SpriteRenderer>().sprite;
         player = GameObject.FindGameObjectWithTag("Player");
         accuracy = startAccuracy;
     }
@@ -86,7 +90,19 @@ public class Enemy : MonoBehaviour
 
     public void Damage(float healthAmount) {
         health -= healthAmount;
-        if (health <= 0.0f) {
+        GetComponent<SpriteRenderer>().sprite = hitSprite;
+        StartCoroutine("Kill");
+    }
+
+    IEnumerator Kill() {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(0.05f);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.05f;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.05f;
+        Time.timeScale = 1;
+        GetComponent<SpriteRenderer>().sprite = initialSprite;
+        if (health <= 0.0f)
+        {
             Destroy(this.gameObject);
         }
     }

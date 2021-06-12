@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float minAccuracy = 20.0f;
     public float maxAccuracy = 100.0f;
     public float startAccuracy = 40.0f;
+
+    Sprite initSprite;
+    public Sprite hitSprite;
     public float currentAccuracy
     {
         get
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initSprite = GetComponent<SpriteRenderer>().sprite;
         playerRigidbody = GetComponent<Rigidbody2D>();
         distanceTimer = distanceTimerInit;
         accuracy = startAccuracy;
@@ -72,6 +76,17 @@ public class PlayerController : MonoBehaviour
 
     public void RegisterBulletHit(float damage) {
         distanceTimer -= damage;
+        GetComponent<SpriteRenderer>().sprite = hitSprite;
+        StartCoroutine("HitTimer");
+    }
+
+    IEnumerator HitTimer() {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(0.05f);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;
+        Time.timeScale = 1;
+        GetComponent<SpriteRenderer>().sprite = initSprite;
     }
 
     // Update is called once per frame
