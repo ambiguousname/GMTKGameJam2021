@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     public void Fire(Vector3 positionToShoot) {
         var bullet = Instantiate(bulletPrefab);
-        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, currentAccuracy, weaponSpeed, "Enemy");
+        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, currentAccuracy, weaponSpeed, "Enemy", Color.yellow);
     }
 
     public void SetStunned() {

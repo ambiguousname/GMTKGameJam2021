@@ -36,20 +36,20 @@ public class Pistol : Pickup
                     closestEnemy = enemy;
                 }
             }
-            var toLook = Mathf.Atan2(player.transform.position.x - closestEnemy.transform.position.x, player.transform.position.y - closestEnemy.transform.position.y) * Mathf.Rad2Deg;
-            pistolSprite.transform.rotation = Quaternion.Euler(new Vector3(0, 0, toLook));
+            var dir = closestEnemy.transform.position - player.transform.position;
+            var lookDir = Quaternion.LookRotation(Vector3.forward, dir);
+            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookDir, Time.deltaTime * 5);
             var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
-            Debug.DrawRay(bulletsOut, closestEnemy.transform.position - bulletsOut);
             var mask = LayerMask.GetMask("Enemies", "Obstacles");
             RaycastHit2D hit = Physics2D.Raycast(bulletsOut, closestEnemy.transform.position - bulletsOut, range, mask);
-            if (hit)
+            if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 5)
             {
                 if (hit.transform.tag == "Enemy" && fireTimer <= 0)
                 {
                     fireTimer = rateOfFire;
                     var bullet = Instantiate(bulletPrefab);
                     Debug.Log(player.currentAccuracy);
-                    bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player");
+                    bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue);
                 }
             }
         }

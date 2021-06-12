@@ -17,8 +17,8 @@ game over.
 normally be very accurate (maybe get rid of this accuracy with the camera flash or just
 focusing on them)? And the player will normally suck at killing things unless the camera is focused on
 them.
-- The closer you zoom in to the main character, the more accurate they become.
-- Fog of war revealed by main character?
-- Game camera zooms in with regular camera?
-- Scroll by moving mouse to edge?
-- Bullets don't hit player health, they hit your timer (Call it "Audience Interest").
+- The closer you zoom in to the main character, the more accurate they become. (Done).
+- Fog of war revealed by main character? (Scrolling works better)
+- Game camera zooms in with regular camera? (Bad idea)
+- Scroll by moving mouse to edge? (Done)
+- Bullets don't hit player health, they hit your timer (Call it "Audience Interest") (Done).

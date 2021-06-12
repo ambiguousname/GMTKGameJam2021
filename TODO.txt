@@ -4,18 +4,15 @@ Goals Leading Up To Dinner:
 
 
 Goals for the End of the Day:
-Player Shooting Rotation still weird
-Mouse Boundaries, Scrolling
-Player shooting adjustments (make it so you have to rotate first to start shooting,
-and make some sort of clear indicator of the range of your weapon)
+Range indicator for weapons
 More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
-Levels
+Levels (Lose State, Win State, Next Level)
 
 Overall Goals:
 Finish Levels
 Easy Restart for Levels
 Playtesting
-Redesign/More Levels
+Redesign/More Levels (Things to consider tweaking: Accuracy?)
 More Enemies?
 Clean up debug stuff
 Game Options
