@@ -7,19 +7,11 @@ Playtesting
 Polish and revision (Accuracy still, and maybe think about how loss of accuracy is better conveyed)
 
 Goals for the End of the Day:
-
-Overall Goals:
-Finish Early Levels
-Easy Restart for Levels
-Playtesting
-Redesign/More Levels (Things to consider tweaking: Accuracy?)
-More Enemies?
-Clean up debug stuff
-Game Options
-Pause Menu
-Better Art
+Pause Menu/Game Options
+Better Art (Do it for the pistol and bullet)
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
-Use clapperboard every level start
 Post Processing
-Start screen
+Start Screen
+Credits
+More Enemies?
 Itch.io page and submission

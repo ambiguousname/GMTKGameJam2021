@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public GameObject bulletPrefab;
 
-    GameObject player;
+    public GameObject player;
 
     public float fireTimerLength = 5.0f;
     public float weaponRange = 10.0f;
@@ -38,7 +38,8 @@ public class Enemy : MonoBehaviour
     }
     private float accuracy;
 
-    private float fireTimer;
+    [HideInInspector]
+    public float fireTimer;
     void Start()
     {
         fireTimer = 0;
@@ -56,26 +57,39 @@ public class Enemy : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public GameObject GetPlayer() {
         var mask = LayerMask.GetMask("Player", "Obstacles");
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, player.transform.position - this.transform.position, weaponRange, mask);
-        if (hit) {
-            if (hit.transform.tag == "Player" && fireTimer <= 0) {
-                fireTimer = fireTimerLength;
-                Fire(player.transform.position);
-            }
+        if (hit && hit.transform.tag == "Player")
+        {
+            return hit.transform.gameObject;
         }
-        if (fireTimer > 0) {
-            fireTimer -= Time.deltaTime;
+        else {
+            return null;
         }
-        if (stunTimer > 0) {
+    }
+
+    public void UpdateStun() {
+        if (stunTimer > 0)
+        {
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0)
             {
                 transform.GetChild(0).gameObject.SetActive(false);
             }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        var playerHit = GetPlayer();
+        if (playerHit && fireTimer <= 0) {
+            fireTimer = fireTimerLength;
+            Fire(player.transform.position);
+        }
+        if (fireTimer > 0) {
+            fireTimer -= Time.deltaTime;
         }
     }
 }

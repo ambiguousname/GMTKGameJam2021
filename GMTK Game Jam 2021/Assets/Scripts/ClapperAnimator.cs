@@ -22,6 +22,7 @@ public class ClapperAnimator : MonoBehaviour
             if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused && stage != "disappear")
             {
                 GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
+                GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = false;
             }
             if (stage == "raise")
             {
@@ -39,6 +40,7 @@ public class ClapperAnimator : MonoBehaviour
                 if (currRotation.eulerAngles.z <= 10)
                 {
                     stage = "disappear";
+                    GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = true;
                     GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
                 }
             }
