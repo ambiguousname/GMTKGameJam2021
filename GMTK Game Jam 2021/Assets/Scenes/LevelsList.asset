@@ -15,9 +15,9 @@ MonoBehaviour:
   levelsList:
   - TutorialLevel
   - FirstLevel
+  - Sniper
   - Surrounded
   - MatrixLobby
-  - Sniper
   - Chased
   - Hallway
   - Winding
