@@ -74,14 +74,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ObjectInFrame(this.transform.position))
-        {
-            currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
-        }
-        else {
-            currentAccuracy = startAccuracy;
-        }
-            var cameraPos = gameCamera.GetCameraPos();
+        currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
+        var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
         var initTimer = distanceTimer;

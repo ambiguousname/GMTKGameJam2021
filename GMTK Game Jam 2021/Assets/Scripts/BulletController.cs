@@ -30,8 +30,10 @@ public class BulletController : MonoBehaviour
         bDamage = damage;
         this.transform.position = shootFrom;
         var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
-        var angle = Vector3.Angle(target, this.transform.position);
-        target += (1 - accuracy/100) * new Vector3(Mathf.Cos(angle) * Random.Range(-10.0f, 10.0f), Mathf.Sin(angle) * Random.Range(-10.0f, 10.0f));
+        var angle = Vector3.Angle(target, this.transform.position) * Mathf.Deg2Rad;
+        Debug.DrawRay(shootFrom, target, Color.red);
+        target += (1 - accuracy/100) * new Vector3(Mathf.Cos(angle) * Random.Range(-800/accuracy, 800/accuracy), Mathf.Sin(angle) * Random.Range(-800/accuracy, 800/accuracy ));
+        Debug.DrawRay(shootFrom, target);
         target.Normalize();
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
