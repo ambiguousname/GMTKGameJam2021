@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public float startAccuracy = 90.0f;
     public float enemyDamage = .5f;
     public float stunDuration = 3.0f;
+    public float health = 1.0f;
 
     private float stunTimer;
     private float bulletTimer = 0;
@@ -80,6 +81,13 @@ public class Enemy : MonoBehaviour
             {
                 transform.GetChild(0).gameObject.SetActive(false);
             }
+        }
+    }
+
+    public void Damage(float healthAmount) {
+        health -= healthAmount;
+        if (health <= 0.0f) {
+            Destroy(this.gameObject);
         }
     }
 

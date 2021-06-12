@@ -49,7 +49,7 @@ public class BulletController : MonoBehaviour
             }
             if (other.gameObject.tag == "Enemy") {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().dTimer += 0.5f;
-                Destroy(other.gameObject);
+                other.GetComponent<Enemy>().Damage(bDamage);
             }
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
