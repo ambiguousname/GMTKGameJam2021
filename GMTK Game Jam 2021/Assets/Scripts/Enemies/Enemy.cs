@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public float minAccuracy = 5.0f;
     public float maxAccuracy = 90.0f;
     public float startAccuracy = 90.0f;
+
+    public bool isVisible = false;
     public float currentAccuracy {
         get {
             return accuracy;
@@ -36,16 +38,14 @@ public class Enemy : MonoBehaviour
 
     public void Fire(Vector3 positionToShoot) {
         var bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = this.transform.position;
-        var target = new Vector3(positionToShoot.x + Random.Range(-25.0f, 25.0f)/accuracy, positionToShoot.y + Random.Range(-25.0f, 25.0f)/accuracy, positionToShoot.z) - this.transform.position;
-        target.Normalize();
-        bullet.GetComponent<Rigidbody2D>().AddForce(target * weaponSpeed);
+        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, accuracy, weaponSpeed, "Enemy");
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, player.transform.position - this.transform.position, weaponRange);
+        var mask = LayerMask.GetMask("Player", "Obstacles");
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, player.transform.position - this.transform.position, weaponRange, mask);
         if (hit) {
             if (hit.transform.tag == "Player" && fireTimer <= 0) {
                 fireTimer = fireTimerLength;

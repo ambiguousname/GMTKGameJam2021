@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     TrailRenderer trail;
     bool canHit;
+    string progenitorTag;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +24,24 @@ public class BulletController : MonoBehaviour
         }
     }
 
+    public void Fire(Vector3 positionToShoot, Vector3 shootFrom, float accuracy, float speed, string spawnerTagName) {
+        progenitorTag = spawnerTagName;
+        this.transform.position = shootFrom;
+        var target = new Vector3(positionToShoot.x + Random.Range(-25.0f, 25.0f) / accuracy, positionToShoot.y + Random.Range(-25.0f, 25.0f) / accuracy, positionToShoot.z) - shootFrom;
+        target.Normalize();
+        this.GetComponent<Rigidbody2D>().AddForce(target * speed);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canHit && other.gameObject.tag != "Enemy") {
+        if (canHit && progenitorTag != other.gameObject.tag) {
             canHit = false;
             if (other.gameObject.tag == "Player")
             {
                 other.gameObject.GetComponent<PlayerController>().RegisterBulletHit();
+            }
+            if (other.gameObject.tag == "Enemy") {
+                Destroy(other.gameObject);
             }
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;

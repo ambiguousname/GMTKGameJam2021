@@ -28,9 +28,9 @@ public class CameraMove : MonoBehaviour
     public bool GetInFrame(Vector3 position) {
         var localPos = MainCamera.WorldToScreenPoint(position);
         var testPos = new Vector3(localPos.x, localPos.y, -1.0f);
-        // We subtract our rect transform's position because the rectangle's boundaries itself are static, meaning we need a way
-        // to get the testPosition relative to our rect.
-        return GetComponent<RectTransform>().rect.Contains(testPos - GetComponent<RectTransform>().position);
+        var rTransform = GetComponent<RectTransform>().rect;
+        var newRect = new Rect(this.transform.position.x - (rTransform.width * currentSize/2), this.transform.position.y - (rTransform.height * currentSize / 2), rTransform.width * currentSize, rTransform.height * currentSize);
+        return newRect.Contains(testPos);
     }
 
     // Update is called once per frame

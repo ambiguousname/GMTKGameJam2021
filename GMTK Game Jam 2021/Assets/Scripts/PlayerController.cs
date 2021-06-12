@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
             if (ObjectInFrame(enemy.transform.position))
             {
                 visibleEnemies.Add(enemy);
+                enemy.GetComponent<Enemy>().isVisible = true;
                 var eComponent = enemy.GetComponent<Enemy>();
                 eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / gameCamera.currentSize);
             }

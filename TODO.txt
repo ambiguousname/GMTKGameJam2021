@@ -1,7 +1,7 @@
 Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
-Player weapons, enemies and enemy weapons.
+Player weapons
 Killing capabilities.
 
 
