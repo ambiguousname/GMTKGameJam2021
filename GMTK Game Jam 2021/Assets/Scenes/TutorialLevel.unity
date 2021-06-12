@@ -261,7 +261,16 @@ TextMesh:
   m_Text: 'If your audience loses sight of the protagonist for too long,
 
     they''ll
-    lose interest and your movie will be a flop.'
+    lose interest and your movie will be a flop.
+
+
+    If your camera isn''t pointed
+    at your protagonist
+
+    or your protagonist takes bullets, your audience
+
+    will
+    lose interest.'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
