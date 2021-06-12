@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7298649018022851916}
   - component: {fileID: 7298649018022851919}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9640987f8c96b4b47a61e0b9dc33f3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupType: {fileID: 0}
+  pickupType: {fileID: 11400000, guid: ebe732e8e4f6e5f468ccd879d5d56c26, type: 2}

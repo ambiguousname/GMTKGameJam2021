@@ -1,6 +1,7 @@
 Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
+Add automatic/semi-automatic weapons
 Playtesting
 More Enemy Types
 Even More Levels

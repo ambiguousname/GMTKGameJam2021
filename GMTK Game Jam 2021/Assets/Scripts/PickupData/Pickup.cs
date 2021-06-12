@@ -12,4 +12,8 @@ public class Pickup : ScriptableObject
     public virtual void PickupUpdate(PlayerController player, List<GameObject> visibleEnemiesList) {
         return;
     }
+
+    public void WeaponUpdate() { 
+        
+    }
 }
