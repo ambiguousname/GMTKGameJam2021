@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    public string NextScene;
+    public LevelsList levelsList;
     public GameObject winMenu;
     public bool isPaused { 
         get {
@@ -58,6 +58,13 @@ public class PauseManager : MonoBehaviour
     }
 
     public void GetNextScene() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(NextScene);
+        int curr_scene = 0;
+        for (int i = 0; i < levelsList.levelsList.Length; i++) {
+            if (levelsList.levelsList[i] == UnityEngine.SceneManagement.SceneManager.GetActiveScene().name) {
+                curr_scene = i;
+            }
+        }
+        TakeCount.currentScene = curr_scene + 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(levelsList.levelsList[curr_scene + 1]);
     }
 }

@@ -1,17 +1,18 @@
 Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
-Add automatic/semi-automatic weapons
-More Enemy Types
 Even More Levels
-Polish and revision (Maybe think about how loss of accuracy is better conveyed)
+Add Wrecking Ball Weapon (Spin randomly and fire lots of bullets)
 
 Goals for the End of the Day:
+Win screen
 Pause Menu/Game Options
 Better Art (Do it for the pistol and bullet)
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
 (Enemies flash white and time pauses briefly on enemy hit, screen shake on player hit)
+(Enemy explosion particles)
 Start Screen
 Credits
+Level Select
 More Enemies?
 Itch.io page and submission

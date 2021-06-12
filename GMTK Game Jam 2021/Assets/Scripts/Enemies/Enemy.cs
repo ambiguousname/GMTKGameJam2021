@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject player;
 
     public float fireTimerLength = 5.0f;
+    public float bulletsPerSecond = 1.0f;
     public float weaponRange = 10.0f;
     public float weaponSpeed = 10.0f;
     public float minAccuracy = 5.0f;
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
     public float stunDuration = 3.0f;
 
     private float stunTimer;
+    private float bulletTimer = 0;
 
     public bool isVisible = false;
     public float currentAccuracy {
@@ -87,10 +89,19 @@ public class Enemy : MonoBehaviour
         var playerHit = GetPlayer();
         if (playerHit && fireTimer <= 0) {
             fireTimer = fireTimerLength;
+            bulletTimer = bulletsPerSecond;
             Fire(player.transform.position);
         }
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
+            if (playerHit && bulletTimer <= 0)
+            {
+                bulletTimer = bulletsPerSecond;
+                Fire(player.transform.position);
+            }
+            else if (bulletTimer > 0) {
+                bulletTimer -= Time.deltaTime;
+            }
         }
         UpdateStun();
     }
