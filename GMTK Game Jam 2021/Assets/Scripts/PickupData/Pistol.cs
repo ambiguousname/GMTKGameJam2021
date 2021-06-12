@@ -62,6 +62,13 @@ public class Pistol : Pickup
                     }
                 }
             }
+            if (bulletTimer <= 0 && fireTimer > 0)
+            {
+                var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
+                bulletTimer = bulletsPerSecond;
+                var bullet = Instantiate(bulletPrefab);
+                bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue, 1.0f);
+            }
         }
         else {
             player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(Vector3.forward, player.gameCamera.MainCamera.ScreenToWorldPoint(Input.mousePosition) - player.transform.position), Time.deltaTime * 10);
@@ -69,7 +76,8 @@ public class Pistol : Pickup
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
         }
-        if (bulletTimer > 0) {
+        if (bulletTimer > 0)
+        {
             bulletTimer -= Time.deltaTime;
         }
     }

@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetPickup(Pickup newPickup) {
         for (int i = 0; i < transform.GetChild(0).childCount; i++) {
-            Destroy(transform.GetChild(0).GetChild(i));
+            Destroy(transform.GetChild(0).GetChild(i).gameObject);
         }
         currentPickup = newPickup;
         currentPickup.OnPickup(this);
