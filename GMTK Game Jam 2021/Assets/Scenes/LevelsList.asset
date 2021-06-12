@@ -16,6 +16,7 @@ MonoBehaviour:
   - TutorialLevel
   - FirstLevel
   - Surrounded
+  - MatrixLobby
   - Sniper
   - Chased
   - Hallway

@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouWin.unity
     guid: 9e219e4e46a2a1e47b524f5a53a97fd2
+  - enabled: 1
+    path: Assets/Scenes/JohnWick.unity
+    guid: 8bb27f6c3172ee347b9540e95c01f076
+  - enabled: 1
+    path: Assets/Scenes/MatrixLobby.unity
+    guid: ae759843c93d7a44fbd3918af3e4a377
   m_configObjects: {}
