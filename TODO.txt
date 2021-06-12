@@ -6,11 +6,10 @@ Make sure all levels are in build settings.
 
 Goals for the End of the Day:
 Win screen
-Pause Menu/Game Options
-Better Art (Do it for the pistol and bullet)
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
 (Enemies flash white and time pauses briefly on enemy hit, screen shake on player hit)
-(Enemy explosion particles)
+(Enemy explosion particles) (Slow motion when the last enemy is killed?)
+Pause Menu/Game Options
 Start Screen
 Credits
 Level Select
