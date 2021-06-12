@@ -37,10 +37,10 @@ public class PlayerController : MonoBehaviour
             return distanceTimer;
         }
         set {
-            timerSlider.color = new Color(timerSlider.color.r, timerSlider.color.g + (value - distanceTimer) * 10.0f * Time.deltaTime, timerSlider.color.b + (value - distanceTimer) * 10.0f * Time.deltaTime);
             distanceTimer = Mathf.Clamp(value, -5, distanceTimerInit);
         }
     }
+    Color timerBaseColor;
 
     // To handle weapons:
     private Pickup currentPickup;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         distanceTimer = distanceTimerInit;
         accuracy = startAccuracy;
+        timerBaseColor = timerSlider.color;
     }
 
     public void SetPickup(Pickup newPickup) {
@@ -82,16 +83,13 @@ public class PlayerController : MonoBehaviour
             var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
+        var initTimer = distanceTimer;
         if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5/2 * GetComponent<Rigidbody2D>().drag)
         {
             if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
             {
                 distanceTimer -= Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
-                if (distanceTimer < distanceTimerInit && timerSlider.color.g > 0)
-                {
-                    timerSlider.color = new Color(timerSlider.color.r, timerSlider.color.g - 0.2f * Time.deltaTime, timerSlider.color.b - 0.2f * Time.deltaTime);
-                }
             }
             if (!Input.GetMouseButton(1))
             {
@@ -100,11 +98,10 @@ public class PlayerController : MonoBehaviour
         }
         if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit) {
             distanceTimer += Time.deltaTime;
-            if (timerSlider.color.g < 1)
-            {
-                timerSlider.color = new Color(timerSlider.color.r, timerSlider.color.g + 0.2f * Time.deltaTime, timerSlider.color.b + 0.2f * Time.deltaTime);
-            }
             timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
+        }
+        if (initTimer != distanceTimer && distanceTimer > 0) {
+            timerSlider.color = new Color(timerBaseColor.r, timerBaseColor.g - (distanceTimerInit/distanceTimer) * 0.1f, timerBaseColor.b - (distanceTimerInit/distanceTimer) * 0.1f);
         }
 
         if (distanceTimer < 0 && !GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused) {
