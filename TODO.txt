@@ -3,12 +3,11 @@ Goals Leading Up To Lunch:
 Goals Leading Up To Dinner:
 
 Goals for the End of the Day:
-Win screen
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
 (Enemies flash white and time pauses briefly on enemy hit, screen shake on player hit)
 (Enemy explosion particles) (Slow motion when the last enemy is killed?) (Fade In/Out for menus)
 Pause Menu/Game Options
-Start Screen
+Start Screen/Main Menu
 Credits
 Level Select
 More Enemies?
