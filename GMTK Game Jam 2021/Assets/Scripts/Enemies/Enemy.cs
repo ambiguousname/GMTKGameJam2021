@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         get {
             if (stunTimer > 0)
             {
-                return 0;
+                return 1;
             }
             else
             {
