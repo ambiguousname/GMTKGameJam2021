@@ -15,7 +15,8 @@ public class LoseText : MonoBehaviour
         if (isPositive) {
             ratings = new string[] { "8/10", "100/100", "9/10", ":)", "★★★★★", "B+", "A", "Ten Thumbs Up" };
             descriptions = new string[] { "I think I liked it.", "I had no idea giving real guns with live rounds to actors could be so enjoyable.", "I am completely satisfied with this outcome.", "It was good.",
-            "I feel asleep, but my kids seemed to like it, so it's good enough for me."};
+            "I feel asleep, but my kids seemed to like it, so it's good enough for me.", "I finally learned what it means to Die Hard with a Vengeance (1995).", "Stanley Kubrick was a director.", 
+            "Movies are now obsolete. The future is squares shooting at other squares."};
         } else {
             ratings = new string[] { "1/10", "2/10", "100/5", "0/10", ":(", "☆☆☆☆☆", "Two Thumbs Down", "One Middle Finger", "F-" };
             descriptions = new string[] { "The best thing I can say is that it was short.", "The main character died, and we were all left waiting in the audience for about an hour or so.",

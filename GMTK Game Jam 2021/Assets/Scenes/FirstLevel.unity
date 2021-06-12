@@ -646,10 +646,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5492548938898209382, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
-      propertyPath: sizeAccuracy
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 5492548939139309295, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
       propertyPath: NextScene
       value: Level2

@@ -2,10 +2,9 @@ Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
 Add automatic/semi-automatic weapons
-Playtesting
 More Enemy Types
 Even More Levels
-Polish and revision (Accuracy still, and maybe think about how loss of accuracy is better conveyed)
+Polish and revision (Maybe think about how loss of accuracy is better conveyed)
 
 Goals for the End of the Day:
 Pause Menu/Game Options

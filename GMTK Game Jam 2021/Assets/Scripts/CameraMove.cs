@@ -87,8 +87,6 @@ public class CameraMove : MonoBehaviour
             this.transform.localScale = baseScale * currentSize;
             if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 3)
             {
-                var pos = Mathf.Abs(Screen.height / 2 - this.transform.localPosition.y);
-                Debug.Log(pos);
                 MoveCamera(new Vector3(0, 3));
             }
             if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 3)
