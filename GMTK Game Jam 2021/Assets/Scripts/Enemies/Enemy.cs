@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
 
     public void SetStunned() {
         stunTimer = stunDuration;
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -71,6 +72,10 @@ public class Enemy : MonoBehaviour
         }
         if (stunTimer > 0) {
             stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0)
+            {
+                transform.GetChild(0).gameObject.SetActive(false);
+            }
         }
     }
 }
