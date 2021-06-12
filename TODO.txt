@@ -1,17 +1,15 @@
 Goals Leading Up To Lunch:
 
 Goals Leading Up To Dinner:
-Player weapons
-Killing capabilities.
 
 
 Goals for the End of the Day:
 Mouse Boundaries, Scrolling
+Camera Flashing
+More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
+Levels
 
 Overall Goals:
-Make a buffer space for the main character to follow the camera without decrementing the timer.
-Camera Flashing
-Levels
 Easy Restart for Levels
 Playtesting
 More Enemies?

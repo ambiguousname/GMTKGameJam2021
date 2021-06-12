@@ -65,9 +65,9 @@ public class PlayerController : MonoBehaviour
         var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
-        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
+        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 0.1f && !Input.GetMouseButtonDown(1))
         {
-            if (distanceTimer > 0)
+            if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
             {
                 distanceTimer -= Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
             }
             playerRigidbody.AddForce(target * playerSpeed);
         }
-        else if (distanceTimer > 0 && distanceTimer < distanceTimerInit) {
+        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit) {
             distanceTimer += Time.deltaTime;
             if (timerSlider.color.g < 1)
             {

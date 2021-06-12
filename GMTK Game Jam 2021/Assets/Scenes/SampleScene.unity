@@ -443,13 +443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944422441}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.0008457303, z: -0, w: 0.99999964}
   m_LocalPosition: {x: -0.43880993, y: 0.19621374, z: 17.52}
   m_LocalScale: {x: 15.7613945, y: 9.183093, z: 7.9901624}
   m_Children: []
   m_Father: {fileID: 1274232469}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.097, z: 0}
 --- !u!1 &1274232468
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
