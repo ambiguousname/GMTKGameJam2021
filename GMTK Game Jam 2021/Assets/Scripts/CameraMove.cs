@@ -34,6 +34,18 @@ public class CameraMove : MonoBehaviour
         return newRect.Contains(testPos);
     }
 
+    public void MoveCamera(Vector3 nextPosition) {
+        var backgrounds = GameObject.FindGameObjectsWithTag("Background");
+        foreach (GameObject background in backgrounds)
+        {
+            if (background.GetComponent<SpriteRenderer>().bounds.Contains(new Vector3(MainCamera.transform.position.x + nextPosition.x, MainCamera.transform.position.y + nextPosition.y, background.transform.position.z)))
+            {
+                MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, MainCamera.transform.position + nextPosition, 5 * Time.deltaTime);
+                break;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -66,5 +78,18 @@ public class CameraMove : MonoBehaviour
             currentSize -= scaleChange;
         }
         this.transform.localScale = baseScale * currentSize;
+        if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 4)
+        {
+            MoveCamera(new Vector3(0, 1));
+        }
+        if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 4) {
+            MoveCamera(new Vector3(0, -1));
+        }
+        if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 4) {
+            MoveCamera(new Vector3(1, 0));
+        }
+        if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 4) {
+            MoveCamera(new Vector3(-1, 0));
+        }
     }
 }
