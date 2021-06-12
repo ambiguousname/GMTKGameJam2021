@@ -133,7 +133,7 @@ MonoBehaviour:
   playerSpeed: 2
   minAccuracy: 20
   maxAccuracy: 100
-  startAccuracy: 40
+  startAccuracy: 20
   distanceTimerInit: 5
   pickupUpdate: 0
 --- !u!70 &332952562518831698

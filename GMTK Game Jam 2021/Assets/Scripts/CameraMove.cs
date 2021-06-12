@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMove : MonoBehaviour
 {
@@ -36,8 +37,18 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
-            Cursor.visible = false;
+        var img = GetComponent<Image>();
+        if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f) {
+            img.color = new Color(img.color.r + 0.7f, img.color.g + 0.7f, img.color.b + 0.7f, img.color.a + 0.7f);
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies) {
+                if (GetInFrame(enemy.transform.position)) {
+                    enemy.GetComponent<Enemy>().SetStunned();
+                }
+            }
+        }
+        if (img.color.a > 0.38f) {
+            img.color = new Color(img.color.r - 0.7f * Time.deltaTime, img.color.g - 0.7f * Time.deltaTime, img.color.b - 0.7f * Time.deltaTime, img.color.a - 0.7f * Time.deltaTime);
         }
         this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
         var scaleChange = Input.GetAxis("Mouse ScrollWheel");

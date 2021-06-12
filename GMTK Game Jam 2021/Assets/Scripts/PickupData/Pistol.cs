@@ -37,7 +37,7 @@ public class Pistol : Pickup
                 }
             }
             var toLook = Mathf.Atan2(player.transform.position.x - closestEnemy.transform.position.x, player.transform.position.y - closestEnemy.transform.position.y) * Mathf.Rad2Deg;
-            player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, toLook + 90));
+            pistolSprite.transform.rotation = Quaternion.Euler(new Vector3(0, 0, toLook));
             var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
             Debug.DrawRay(bulletsOut, closestEnemy.transform.position - bulletsOut);
             var mask = LayerMask.GetMask("Enemies", "Obstacles");
@@ -48,6 +48,7 @@ public class Pistol : Pickup
                 {
                     fireTimer = rateOfFire;
                     var bullet = Instantiate(bulletPrefab);
+                    Debug.Log(player.currentAccuracy);
                     bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player");
                 }
             }

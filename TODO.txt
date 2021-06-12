@@ -4,9 +4,12 @@ Goals Leading Up To Dinner:
 
 
 Goals for the End of the Day:
-Fix how player shooting looks
+Player Shooting Rotation still weird
 Mouse Boundaries, Scrolling
 Camera Flashing
+Stunned Indicator
+Player shooting adjustments (make it so you have to rotate first to start shooting,
+and make some sort of clear indicator of the range of your weapon)
 More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
 Levels
 

@@ -16,11 +16,21 @@ public class Enemy : MonoBehaviour
     public float minAccuracy = 5.0f;
     public float maxAccuracy = 90.0f;
     public float startAccuracy = 90.0f;
+    public float stunDuration = 3.0f;
+
+    private float stunTimer;
 
     public bool isVisible = false;
     public float currentAccuracy {
         get {
-            return accuracy;
+            if (stunTimer > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return accuracy;
+            }
         }
         set {
             accuracy = Mathf.Clamp(value, minAccuracy, maxAccuracy);
@@ -38,7 +48,11 @@ public class Enemy : MonoBehaviour
 
     public void Fire(Vector3 positionToShoot) {
         var bullet = Instantiate(bulletPrefab);
-        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, accuracy, weaponSpeed, "Enemy");
+        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, currentAccuracy, weaponSpeed, "Enemy");
+    }
+
+    public void SetStunned() {
+        stunTimer = stunDuration;
     }
 
     // Update is called once per frame
@@ -54,6 +68,9 @@ public class Enemy : MonoBehaviour
         }
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
+        }
+        if (stunTimer > 0) {
+            stunTimer -= Time.deltaTime;
         }
     }
 }
