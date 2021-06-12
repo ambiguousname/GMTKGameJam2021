@@ -15,6 +15,7 @@ public class EnemyCounter : MonoBehaviour
             if (eCount <= 0)
             {
                 TakeCount.currentScene += 1;
+                TakeCount.currentTake = 0;
                 GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
             }
         }

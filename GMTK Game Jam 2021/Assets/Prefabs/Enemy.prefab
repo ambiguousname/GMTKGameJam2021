@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024937955212900254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.69, y: 0.4, z: 16.016218}
+  m_LocalPosition: {x: -7.69, y: 0.4, z: 0}
   m_LocalScale: {x: 0.2076, y: 0.2076, z: 0.2076}
   m_Children:
   - {fileID: 8314427524873158499}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2936819903926852095, guid: 747932b65eb03314cbb468fdaeb8a9cf, type: 3}
+  player: {fileID: 0}
   fireTimerLength: 1
   weaponRange: 10
   weaponSpeed: 500
@@ -133,6 +134,7 @@ MonoBehaviour:
   startAccuracy: 90
   stunDuration: 3
   isVisible: 0
+  fireTimer: 0
 --- !u!50 &3352217452581591430
 Rigidbody2D:
   serializedVersion: 4

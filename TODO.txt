@@ -1,5 +1,5 @@
 Goals Leading Up To Lunch:
-More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
+One More Enemy Type
 More Levels
 
 Goals Leading Up To Dinner:
