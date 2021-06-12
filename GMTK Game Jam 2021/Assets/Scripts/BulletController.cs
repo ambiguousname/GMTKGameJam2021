@@ -7,6 +7,7 @@ public class BulletController : MonoBehaviour
     TrailRenderer trail;
     bool canHit;
     string progenitorTag;
+    float bDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +25,14 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    public void Fire(Vector3 positionToShoot, Vector3 shootFrom, float accuracy, float speed, string spawnerTagName, Color tint) {
+    public void Fire(Vector3 positionToShoot, Vector3 shootFrom, float accuracy, float speed, string spawnerTagName, Color tint, float damage) {
         progenitorTag = spawnerTagName;
+        bDamage = damage;
         this.transform.position = shootFrom;
         var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
+        var angle = Vector3.Angle(target, this.transform.position);
+        target += (1 - accuracy/100) * new Vector3(Mathf.Cos(angle) * Random.Range(-10.0f, 10.0f), Mathf.Sin(angle) * Random.Range(-10.0f, 10.0f));
         target.Normalize();
-        target += new Vector3(Random.Range(-5.0f, 5.0f) / accuracy,  Random.Range(-5.0f, 5.0f)/ accuracy);
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
     }
@@ -40,7 +43,7 @@ public class BulletController : MonoBehaviour
             canHit = false;
             if (other.gameObject.tag == "Player")
             {
-                other.gameObject.GetComponent<PlayerController>().RegisterBulletHit();
+                other.gameObject.GetComponent<PlayerController>().RegisterBulletHit(bDamage);
             }
             if (other.gameObject.tag == "Enemy") {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().dTimer += 0.5f;

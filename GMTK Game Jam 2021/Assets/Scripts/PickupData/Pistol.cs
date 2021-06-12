@@ -52,8 +52,7 @@ public class Pistol : Pickup
                     {
                         fireTimer = rateOfFire;
                         var bullet = Instantiate(bulletPrefab);
-                        Debug.Log(player.currentAccuracy);
-                        bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue);
+                        bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue, 1.0f);
                     }
                 }
             }

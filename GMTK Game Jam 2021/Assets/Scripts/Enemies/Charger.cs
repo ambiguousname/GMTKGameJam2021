@@ -26,7 +26,7 @@ public class Charger : Enemy
             if (Random.Range(0, 100) <= currentAccuracy)
             {
                 fireTimer = fireTimerLength;
-                player.GetComponent<PlayerController>().dTimer -= 0.5f;
+                player.GetComponent<PlayerController>().RegisterBulletHit(enemyDamage);
                 slicer.GetComponent<Animator>().Play("Slicing");
                 slicer.SetActive(true);
             }

@@ -67,8 +67,8 @@ public class PlayerController : MonoBehaviour
         return gameCamera.GetInFrame(objectPosition);
     }
 
-    public void RegisterBulletHit() {
-        distanceTimer -= 0.5f;
+    public void RegisterBulletHit(float damage) {
+        distanceTimer -= damage;
     }
 
     // Update is called once per frame

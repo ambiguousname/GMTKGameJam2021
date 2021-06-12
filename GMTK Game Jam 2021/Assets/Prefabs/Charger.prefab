@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   player: {fileID: 0}
   fireTimerLength: 3
-  weaponRange: 10
+  weaponRange: 100
   weaponSpeed: 10
   minAccuracy: 5
   maxAccuracy: 90

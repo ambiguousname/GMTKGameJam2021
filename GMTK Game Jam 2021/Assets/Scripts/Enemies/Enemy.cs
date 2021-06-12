@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public float minAccuracy = 5.0f;
     public float maxAccuracy = 90.0f;
     public float startAccuracy = 90.0f;
+    public float enemyDamage = .5f;
     public float stunDuration = 3.0f;
 
     private float stunTimer;
@@ -49,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     public void Fire(Vector3 positionToShoot) {
         var bullet = Instantiate(bulletPrefab);
-        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, currentAccuracy, weaponSpeed, "Enemy", Color.yellow);
+        bullet.GetComponent<BulletController>().Fire(positionToShoot, this.transform.position, currentAccuracy, weaponSpeed, "Enemy", Color.yellow, enemyDamage);
     }
 
     public void SetStunned() {
@@ -91,5 +92,6 @@ public class Enemy : MonoBehaviour
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
         }
+        UpdateStun();
     }
 }
