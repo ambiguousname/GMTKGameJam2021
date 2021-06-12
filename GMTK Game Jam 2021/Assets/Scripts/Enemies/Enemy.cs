@@ -100,15 +100,25 @@ public class Enemy : MonoBehaviour
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.05f;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.05f;
         Time.timeScale = 1;
-        GetComponent<SpriteRenderer>().sprite = initialSprite;
-        if (health <= 0.0f)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
         {
-            Destroy(this.gameObject);
+            // TODO: Make really slow and cool particle explosion for this.
+            yield return new WaitForSecondsRealtime(2);
+            GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = initialSprite;
+            if (health <= 0.0f)
+            {
+                // TODO: Make really cool particle explosion for this.
+                Destroy(this.gameObject);
+            }
         }
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         var playerHit = GetPlayer();
         if (playerHit && fireTimer <= 0) {
