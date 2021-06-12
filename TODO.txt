@@ -4,15 +4,19 @@ Goals Leading Up To Dinner:
 
 
 Goals for the End of the Day:
+Fix how player shooting looks
 Mouse Boundaries, Scrolling
 Camera Flashing
 More Enemy and Pickup Types (Definitely two or three more enemy types, not sure about pickups yet)
 Levels
 
 Overall Goals:
+Finish Levels
 Easy Restart for Levels
 Playtesting
+Redesign/More Levels
 More Enemies?
+Clean up debug stuff
 Game Options
 Pause Menu
 Better Art

@@ -36,8 +36,8 @@ public class Pistol : Pickup
                     closestEnemy = enemy;
                 }
             }
-            var toLook = Quaternion.LookRotation(player.transform.position - closestEnemy.transform.position);
-            player.transform.rotation = Quaternion.Euler(0, 0, toLook.eulerAngles.x);
+            var toLook = Mathf.Atan2(player.transform.position.x - closestEnemy.transform.position.x, player.transform.position.y - closestEnemy.transform.position.y) * Mathf.Rad2Deg;
+            player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, toLook + 90));
             var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
             Debug.DrawRay(bulletsOut, closestEnemy.transform.position - bulletsOut);
             var mask = LayerMask.GetMask("Enemies", "Obstacles");
