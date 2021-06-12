@@ -1,10 +1,9 @@
 Goals Leading Up To Lunch:
-More Enemy Types
-More Levels
 
 Goals Leading Up To Dinner:
-Even More Levels
 Playtesting
+More Enemy Types
+Even More Levels
 Polish and revision (Accuracy still, and maybe think about how loss of accuracy is better conveyed)
 
 Goals for the End of the Day:
@@ -12,7 +11,6 @@ Pause Menu/Game Options
 Better Art (Do it for the pistol and bullet)
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
 (Enemies flash white and time pauses briefly on enemy hit, screen shake on player hit)
-Post Processing
 Start Screen
 Credits
 More Enemies?
