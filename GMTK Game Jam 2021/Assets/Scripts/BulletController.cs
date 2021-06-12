@@ -27,8 +27,9 @@ public class BulletController : MonoBehaviour
     public void Fire(Vector3 positionToShoot, Vector3 shootFrom, float accuracy, float speed, string spawnerTagName, Color tint) {
         progenitorTag = spawnerTagName;
         this.transform.position = shootFrom;
-        var target = new Vector3(positionToShoot.x + Random.Range(-25.0f, 25.0f) / accuracy, positionToShoot.y + Random.Range(-25.0f, 25.0f) / accuracy, positionToShoot.z) - shootFrom;
+        var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
         target.Normalize();
+        target += new Vector3(Random.Range(-25.0f, 25.0f) / accuracy,  Random.Range(-25.0f, 25.0f)/ accuracy);
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
     }

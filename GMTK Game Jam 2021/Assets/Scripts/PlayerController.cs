@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         var cameraPos = gameCamera.GetCameraPos();
         var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
         target.Normalize();
-        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 0.1f)
+        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5/2 * GetComponent<Rigidbody2D>().drag)
         {
             if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
             {

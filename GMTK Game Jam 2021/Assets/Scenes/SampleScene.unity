@@ -1631,12 +1631,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 239458448}
     - target: {fileID: 332952562518831699, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
+      propertyPath: playerSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 332952562518831699, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
       propertyPath: timerSlider
       value: 
       objectReference: {fileID: 43388308}
     - target: {fileID: 332952562518831700, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 332952562518831701, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 332952562518831698, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}

@@ -46,7 +46,7 @@ public class Pistol : Pickup
                 var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
                 var mask = LayerMask.GetMask("Enemies", "Obstacles");
                 RaycastHit2D hit = Physics2D.Raycast(bulletsOut, closestEnemy.transform.position - bulletsOut, range, mask);
-                if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 10)
+                if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 90)
                 {
                     if (hit.transform.tag == "Enemy" && fireTimer <= 0)
                     {
@@ -59,7 +59,7 @@ public class Pistol : Pickup
             }
         }
         else {
-            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(Vector3.forward, player.gameCamera.MainCamera.ScreenToWorldPoint(Input.mousePosition) - player.transform.position), Time.deltaTime * 3);
+            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(Vector3.forward, player.gameCamera.MainCamera.ScreenToWorldPoint(Input.mousePosition) - player.transform.position), Time.deltaTime * 10);
         }
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
