@@ -18,13 +18,15 @@ public class Pistol : Pickup
     {
         pistolSprite = Instantiate(pistolPrefab, player.transform.GetChild(0));
         pistolSprite.transform.position = player.transform.GetChild(0).position;
+        player.transform.GetChild(1).localScale = new Vector3(range * 8.6f, range * 8.6f, 1);
         return;
     }
 
     public override void PickupUpdate(PlayerController player, List<GameObject> visibleEnemiesList)
     {
         pistolSprite.transform.position = player.transform.GetChild(0).position;
-        if (visibleEnemiesList.Count > 0) {
+        if (visibleEnemiesList.Count > 0)
+        {
             var closestEnemy = visibleEnemiesList[0];
             var closestDist = Vector2.Distance(closestEnemy.transform.position, player.transform.position);
             foreach (GameObject enemy in visibleEnemiesList)
@@ -36,22 +38,28 @@ public class Pistol : Pickup
                     closestEnemy = enemy;
                 }
             }
-            var dir = closestEnemy.transform.position - player.transform.position;
-            var lookDir = Quaternion.LookRotation(Vector3.forward, dir);
-            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookDir, Time.deltaTime * 5);
-            var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
-            var mask = LayerMask.GetMask("Enemies", "Obstacles");
-            RaycastHit2D hit = Physics2D.Raycast(bulletsOut, closestEnemy.transform.position - bulletsOut, range, mask);
-            if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 5)
+            if (Vector3.Distance(closestEnemy.transform.position, player.transform.position) <= range)
             {
-                if (hit.transform.tag == "Enemy" && fireTimer <= 0)
+                var dir = closestEnemy.transform.position - player.transform.position;
+                var lookDir = Quaternion.LookRotation(Vector3.forward, dir);
+                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookDir, Time.deltaTime * 5);
+                var bulletsOut = pistolSprite.transform.GetChild(0).GetChild(0).transform.position;
+                var mask = LayerMask.GetMask("Enemies", "Obstacles");
+                RaycastHit2D hit = Physics2D.Raycast(bulletsOut, closestEnemy.transform.position - bulletsOut, range, mask);
+                if (hit && Quaternion.Angle(player.transform.rotation, lookDir) <= 10)
                 {
-                    fireTimer = rateOfFire;
-                    var bullet = Instantiate(bulletPrefab);
-                    Debug.Log(player.currentAccuracy);
-                    bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue);
+                    if (hit.transform.tag == "Enemy" && fireTimer <= 0)
+                    {
+                        fireTimer = rateOfFire;
+                        var bullet = Instantiate(bulletPrefab);
+                        Debug.Log(player.currentAccuracy);
+                        bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue);
+                    }
                 }
             }
+        }
+        else {
+            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(Vector3.forward, player.gameCamera.MainCamera.ScreenToWorldPoint(Input.mousePosition) - player.transform.position), Time.deltaTime * 3);
         }
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;

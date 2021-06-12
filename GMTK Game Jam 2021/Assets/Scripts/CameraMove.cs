@@ -69,26 +69,26 @@ public class CameraMove : MonoBehaviour
         }
         this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
         var scaleChange = Input.GetAxis("Mouse ScrollWheel");
-        currentSize += scaleChange;
+        currentSize -= scaleChange;
         if (Vector3.Magnitude(baseScale * currentSize) > Vector3.Magnitude(baseScale * maxSize))
         {
-            currentSize -= scaleChange;
+            currentSize += scaleChange;
         }
         else if (Vector3.Magnitude(baseScale * currentSize) < Vector3.Magnitude(baseScale * minSize)) {
-            currentSize -= scaleChange;
+            currentSize += scaleChange;
         }
         this.transform.localScale = baseScale * currentSize;
-        if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 3)
+        if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 4)
         {
             MoveCamera(new Vector3(0, 1));
         }
-        if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 3) {
+        if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 4) {
             MoveCamera(new Vector3(0, -1));
         }
-        if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 3) {
+        if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 4) {
             MoveCamera(new Vector3(1, 0));
         }
-        if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 3) {
+        if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 4) {
             MoveCamera(new Vector3(-1, 0));
         }
     }
