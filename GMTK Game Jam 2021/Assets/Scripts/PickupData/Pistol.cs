@@ -6,9 +6,11 @@ using UnityEngine;
 public class Pistol : Pickup
 {
     public float rateOfFire = 1.0f;
+    public float bulletsPerSecond = 1.0f;
     public float range = 10.0f;
     public float bulletSpeed = 500.0f;
     private float fireTimer = 0.0f;
+    private float bulletTimer = 0.0f;
     public GameObject pistolPrefab;
     public GameObject bulletPrefab;
 
@@ -51,8 +53,12 @@ public class Pistol : Pickup
                     if (hit.transform.tag == "Enemy" && fireTimer <= 0)
                     {
                         fireTimer = rateOfFire;
-                        var bullet = Instantiate(bulletPrefab);
-                        bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue, 1.0f);
+                        if (bulletTimer <= 0)
+                        {
+                            bulletTimer = bulletsPerSecond;
+                            var bullet = Instantiate(bulletPrefab);
+                            bullet.GetComponent<BulletController>().Fire(closestEnemy.transform.position, bulletsOut, player.currentAccuracy, bulletSpeed, "Player", Color.blue, 1.0f);
+                        }
                     }
                 }
             }
@@ -62,6 +68,9 @@ public class Pistol : Pickup
         }
         if (fireTimer > 0) {
             fireTimer -= Time.deltaTime;
+        }
+        if (bulletTimer > 0) {
+            bulletTimer -= Time.deltaTime;
         }
     }
 }
