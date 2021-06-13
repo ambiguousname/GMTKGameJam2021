@@ -27,7 +27,7 @@ public class ClapperAnimator : MonoBehaviour
             if (stage == "raise")
             {
                 var currRotation = this.transform.GetChild(1).rotation;
-                this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z + 0.3f));
+                this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z + 150 * Time.unscaledDeltaTime));
                 if (currRotation.eulerAngles.z > 50)
                 {
                     stage = "lower";
@@ -36,7 +36,7 @@ public class ClapperAnimator : MonoBehaviour
             else if (stage == "lower")
             {
                 var currRotation = this.transform.GetChild(1).rotation;
-                this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 0.3f));
+                this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 150 * Time.unscaledDeltaTime));
                 if (currRotation.eulerAngles.z <= 10)
                 {
                     GetComponent<AudioSource>().Play();
@@ -47,9 +47,9 @@ public class ClapperAnimator : MonoBehaviour
             }
             else if (stage == "disappear") {
                 var currRotation = this.transform.GetChild(1).rotation;
-                if (currRotation.eulerAngles.z > 1)
+                if (currRotation.eulerAngles.z > 5)
                 {
-                    this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 0.5f));
+                    this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 10f * Time.unscaledDeltaTime));
                 }
                 this.transform.position -= Time.unscaledDeltaTime * new Vector3(0, 500.0f, 0);
                 if (this.transform.position.y < -Screen.height) {
