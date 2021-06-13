@@ -9,5 +9,5 @@ Pause Menu/Game Options
 Start Screen/Main Menu
 Credits
 Level Select
-More Enemies?
+Add Enemy that flees from camera, add them into a few levels?
 Itch.io page and submission

@@ -29,6 +29,7 @@ public class PauseManager : MonoBehaviour
 
     public void PauseMenu() {
         PauseGame();
+        GetComponent<AudioSource>().Play();
     }
 
     public void PauseGame() {

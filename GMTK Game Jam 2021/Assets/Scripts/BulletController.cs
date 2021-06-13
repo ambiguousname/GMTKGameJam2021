@@ -26,6 +26,8 @@ public class BulletController : MonoBehaviour
     }
 
     public void Fire(Vector3 positionToShoot, Vector3 shootFrom, float accuracy, float speed, string spawnerTagName, Color tint, float damage) {
+        GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
+        GetComponent<AudioSource>().Play();
         progenitorTag = spawnerTagName;
         bDamage = damage;
         this.transform.position = shootFrom;

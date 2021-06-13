@@ -59,6 +59,8 @@ public class CameraMove : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f)
             {
+                GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                GetComponent<AudioSource>().Play();
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;
                 img.color = new Color(img.color.r + 0.7f, img.color.g + 0.7f, img.color.b + 0.7f, img.color.a + 0.7f);
