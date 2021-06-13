@@ -36,7 +36,10 @@ public class LoseText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Make sure that we're always paused while this is up.
-        Time.timeScale = 0;
+        if (GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause == false)
+        {
+            // Make sure that we're always paused while this is up.
+            Time.timeScale = 0;
+        }
     }
 }

@@ -48,6 +48,7 @@ public class PauseManager : MonoBehaviour
     }
 
     public void RestartLevel() {
+        canUnpause = true;
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
