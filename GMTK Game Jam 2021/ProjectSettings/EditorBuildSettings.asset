@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SmallTown.unity
     guid: e543a44baeac4a246b4b2535e5560c4b
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 4be27f9772a854544bea2ea02e885129
+  - enabled: 1
+    path: Assets/Scenes/Menus/LevelSelect.unity
+    guid: 08a63d79c1eb1ed4881010d0d6773f29
   m_configObjects: {}

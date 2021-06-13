@@ -97,56 +97,63 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
-        var cameraPos = gameCamera.GetCameraPos();
-        var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
-        target.Normalize();
-        var initTimer = distanceTimer;
-        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5/2 * GetComponent<Rigidbody2D>().drag)
+        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
         {
-            if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
+            currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
+            var cameraPos = gameCamera.GetCameraPos();
+            var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
+            target.Normalize();
+            var initTimer = distanceTimer;
+            if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5 / 2 * GetComponent<Rigidbody2D>().drag)
             {
-                distanceTimer -= Time.deltaTime;
+                if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
+                {
+                    distanceTimer -= Time.deltaTime;
+                    timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
+                }
+                if (!Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+                {
+                    playerRigidbody.AddForce(target * playerSpeed);
+                    this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(initScale.x * Mathf.Clamp(Mathf.Abs(target.x) + 1, 0.25f, 1.75f), initScale.y * Mathf.Clamp(Mathf.Abs(target.y) + 1, 0.25f, 1.75f), initScale.z), Time.deltaTime);
+                }
+            }
+            this.transform.localScale = Vector3.Lerp(this.transform.localScale, initScale, Time.deltaTime);
+            if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit)
+            {
+                distanceTimer += Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
             }
-            if (!Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+            if (initTimer != distanceTimer && distanceTimer > 0)
             {
-                playerRigidbody.AddForce(target * playerSpeed);
-                this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(initScale.x * Mathf.Clamp(Mathf.Abs(target.x) + 1, 0.25f, 1.75f), initScale.y * Mathf.Clamp(Mathf.Abs(target.y) + 1, 0.25f, 1.75f), initScale.z), Time.deltaTime);
+                timerSlider.color = new Color(timerBaseColor.r, timerBaseColor.g - (distanceTimerInit / distanceTimer) * 0.1f, timerBaseColor.b - (distanceTimerInit / distanceTimer) * 0.1f);
             }
-        }
-        this.transform.localScale = Vector3.Lerp(this.transform.localScale, initScale, Time.deltaTime);
-        if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit) {
-            distanceTimer += Time.deltaTime;
-            timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
-        }
-        if (initTimer != distanceTimer && distanceTimer > 0) {
-            timerSlider.color = new Color(timerBaseColor.r, timerBaseColor.g - (distanceTimerInit/distanceTimer) * 0.1f, timerBaseColor.b - (distanceTimerInit/distanceTimer) * 0.1f);
-        }
 
-        if (distanceTimer < 0 && !GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused) {
-            GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
-            GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = false;
-            loseMenu.SetActive(true);
-        }
-        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        var visibleEnemies = new List<GameObject>();
-        foreach (GameObject enemy in enemies)
-        {
-            if (ObjectInFrame(enemy.transform.position))
+            if (distanceTimer < 0 && !GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
             {
-                visibleEnemies.Add(enemy);
-                enemy.GetComponent<Enemy>().isVisible = true;
-                var eComponent = enemy.GetComponent<Enemy>();
-                eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / gameCamera.currentSize);
+                GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
+                GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = false;
+                loseMenu.SetActive(true);
             }
-            else if (enemy.GetComponent<Enemy>().currentAccuracy != enemy.GetComponent<Enemy>().startAccuracy)
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            var visibleEnemies = new List<GameObject>();
+            foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<Enemy>().currentAccuracy = enemy.GetComponent<Enemy>().startAccuracy;
+                if (ObjectInFrame(enemy.transform.position))
+                {
+                    visibleEnemies.Add(enemy);
+                    enemy.GetComponent<Enemy>().isVisible = true;
+                    var eComponent = enemy.GetComponent<Enemy>();
+                    eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / gameCamera.currentSize);
+                }
+                else if (enemy.GetComponent<Enemy>().currentAccuracy != enemy.GetComponent<Enemy>().startAccuracy)
+                {
+                    enemy.GetComponent<Enemy>().currentAccuracy = enemy.GetComponent<Enemy>().startAccuracy;
+                }
             }
-        }
-        if (pickupUpdate) {
-            currentPickup.PickupUpdate(this, visibleEnemies);
+            if (pickupUpdate)
+            {
+                currentPickup.PickupUpdate(this, visibleEnemies);
+            }
         }
     }
 }
