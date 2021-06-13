@@ -135,7 +135,7 @@ MonoBehaviour:
   gameCamera: {fileID: 0}
   loseMenu: {fileID: 0}
   timerSlider: {fileID: 0}
-  playerSpeed: 2
+  playerSpeed: 10
   maxSpeed: 10
   minAccuracy: 20
   maxAccuracy: 100

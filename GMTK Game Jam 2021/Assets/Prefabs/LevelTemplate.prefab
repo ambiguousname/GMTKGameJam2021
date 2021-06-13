@@ -4449,10 +4449,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5492548938898209382}
     - target: {fileID: 332952562518831699, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
-      propertyPath: playerSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 332952562518831699, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
       propertyPath: timerSlider
       value: 
       objectReference: {fileID: 5492548938700042082}

@@ -118,8 +118,11 @@ public class Enemy : MonoBehaviour
             {
                 GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
             }
-            yield return new WaitForSeconds(1f);
-            Destroy(this.gameObject);
+            else
+            {
+                yield return new WaitForSeconds(1f);
+                Destroy(this.gameObject);
+            }
         }
     }
 
