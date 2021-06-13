@@ -114,11 +114,11 @@ public class Enemy : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             GetComponent<ParticleSystem>().Play();
-            yield return new WaitForSeconds(1);
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
             {
                 GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
             }
+            yield return new WaitForSeconds(1f);
             Destroy(this.gameObject);
         }
     }
