@@ -6,6 +6,5 @@ Goals for the End of the Day:
 Game Juice (Sound Effects Included) (Main character Emotions, like smiling when the camera flashes on them)
 (Enemy explosion particles) (Slow motion when the last enemy is killed?) (Fade In/Out for menus)
 Pause Menu/Game Options
-Credits
 Add Enemy that flees from camera, add them into a few levels?
 Itch.io page and submission

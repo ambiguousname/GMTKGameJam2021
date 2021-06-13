@@ -590,3 +590,97 @@ System memory in use after: 100.2 MB.
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2742.
 Total: 2.977200 ms (FindLiveObjects: 0.254200 ms CreateObjectMapping: 0.122900 ms MarkObjects: 2.478800 ms  DeleteObjects: 0.119600 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005873 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.357 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.2 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2746.
+Total: 2.231100 ms (FindLiveObjects: 0.214200 ms CreateObjectMapping: 0.162000 ms MarkObjects: 1.743100 ms  DeleteObjects: 0.110800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 546.107118 seconds.
+  path: Assets/Scenes/Flanked.unity
+  artifactKey: Guid(6c59e9533ddcf6d49a1ca1cc365d948d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Flanked.unity using Guid(6c59e9533ddcf6d49a1ca1cc365d948d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001d9f8d45a562b77d9ff5ce94771fa9') in 0.039720 seconds
+  Import took 0.043012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.472754 seconds.
+  path: Assets/Scenes/Menus/Credits.unity
+  artifactKey: Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/Credits.unity using Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f34cedb3e7a937c9c7b56641f287c91') in 0.011333 seconds
+  Import took 0.018721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.430193 seconds.
+  path: Assets/Scenes/Menus/MainMenu.unity
+  artifactKey: Guid(4be27f9772a854544bea2ea02e885129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/MainMenu.unity using Guid(4be27f9772a854544bea2ea02e885129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e250a4474b7d7b4ba17cacbab2098eaf') in 0.004700 seconds
+  Import took 0.008996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.835609 seconds.
+  path: Assets/Scenes/Menus/LevelSelect.unity
+  artifactKey: Guid(08a63d79c1eb1ed4881010d0d6773f29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/LevelSelect.unity using Guid(08a63d79c1eb1ed4881010d0d6773f29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cb16a99343684265c106c019360720c') in 0.006208 seconds
+  Import took 0.009862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.408951 seconds.
+  path: Assets/Scenes/Menus/Credits.unity
+  artifactKey: Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/Credits.unity using Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ef136f255f33ce36825748a2e3a659') in 0.003884 seconds
+  Import took 0.007724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000793 seconds.
+  path: Assets/Scenes/Menus/Credits.unity
+  artifactKey: Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/Credits.unity using Guid(dcc0a28e6bafc5e478c93064c437f4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ef136f255f33ce36825748a2e3a659') in 0.005221 seconds
+  Import took 0.009503 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005089 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.108 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.1 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2750.
+Total: 2.790700 ms (FindLiveObjects: 0.250100 ms CreateObjectMapping: 0.103400 ms MarkObjects: 2.323700 ms  DeleteObjects: 0.112100 ms)
+
