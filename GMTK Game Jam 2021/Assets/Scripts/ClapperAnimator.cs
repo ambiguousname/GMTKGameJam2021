@@ -39,6 +39,7 @@ public class ClapperAnimator : MonoBehaviour
                 this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 0.3f));
                 if (currRotation.eulerAngles.z <= 10)
                 {
+                    GetComponent<AudioSource>().Play();
                     stage = "disappear";
                     GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = true;
                     GameObject.Find("PauseManager").GetComponent<PauseManager>().PauseGame();
@@ -50,7 +51,7 @@ public class ClapperAnimator : MonoBehaviour
                 {
                     this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 0.5f));
                 }
-                this.transform.position -= new Vector3(0, 1.0f, 0);
+                this.transform.position -= Time.unscaledDeltaTime * new Vector3(0, 500.0f, 0);
                 if (this.transform.position.y < -Screen.height) {
                     isRunning = false;
                 }

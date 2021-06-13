@@ -49,7 +49,7 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
+        if (!(GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused || Time.deltaTime == 0))
         {
             var img = GetComponent<Image>();
             if (Input.GetMouseButton(0))

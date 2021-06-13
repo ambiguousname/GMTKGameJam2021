@@ -464,6 +464,7 @@ MonoBehaviour:
   shake: 0
   shakeAmount: 0.7
   decreaseFactor: 1
+  startTransform: {x: 0, y: 0, z: 0}
 --- !u!1001 &1629709334
 PrefabInstance:
   m_ObjectHideFlags: 0

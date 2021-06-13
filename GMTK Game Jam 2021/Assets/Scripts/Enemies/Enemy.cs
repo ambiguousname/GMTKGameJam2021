@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public float enemyDamage = .5f;
     public float stunDuration = 3.0f;
     public float health = 1.0f;
+    bool dying = false;
 
     private float stunTimer;
     private float bulletTimer = 0;
@@ -96,47 +97,57 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Kill() {
         Time.timeScale = 0;
+        dying = true;
         yield return new WaitForSecondsRealtime(0.05f);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.05f;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.05f;
-        Time.timeScale = 1;
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
+        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
         {
-            // TODO: Make really slow and cool particle explosion for this.
-            yield return new WaitForSecondsRealtime(2);
-            GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
+            Time.timeScale = 1;
         }
-        else
-        {
             GetComponent<SpriteRenderer>().sprite = initialSprite;
-            if (health <= 0.0f)
+        if (health <= 0.0f)
+        {
+            GetComponent<SpriteRenderer>().sprite = null;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            transform.GetChild(0).gameObject.SetActive(false);
+            this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            GetComponent<ParticleSystem>().Play();
+            yield return new WaitForSeconds(1);
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
             {
-                // TODO: Make really cool particle explosion for this.
-                Destroy(this.gameObject);
+                GameObject.Find("PauseManager").GetComponent<PauseManager>().GetWin();
             }
+            Destroy(this.gameObject);
         }
     }
 
-        // Update is called once per frame
-        void Update()
-    {
-        var playerHit = GetPlayer();
-        if (playerHit && fireTimer <= 0) {
-            fireTimer = fireTimerLength;
-            bulletTimer = bulletsPerSecond;
-            Fire(player.transform.position);
-        }
-        if (fireTimer > 0) {
-            fireTimer -= Time.deltaTime;
-            if (playerHit && bulletTimer <= 0)
+    // Update is called once per frame
+    void Update() {
+        if (!(GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused || Time.timeScale == 0) && !dying)
+        {
+            var playerHit = GetPlayer();
+            if (playerHit && fireTimer <= 0)
             {
+                fireTimer = fireTimerLength;
                 bulletTimer = bulletsPerSecond;
                 Fire(player.transform.position);
             }
-            else if (bulletTimer > 0) {
-                bulletTimer -= Time.deltaTime;
+            if (fireTimer > 0)
+            {
+                fireTimer -= Time.deltaTime;
+                if (playerHit && bulletTimer <= 0)
+                {
+                    bulletTimer = bulletsPerSecond;
+                    Fire(player.transform.position);
+                }
+                else if (bulletTimer > 0)
+                {
+                    bulletTimer -= Time.deltaTime;
+                }
             }
+            UpdateStun();
         }
-        UpdateStun();
     }
 }

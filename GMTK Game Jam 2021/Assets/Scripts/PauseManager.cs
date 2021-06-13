@@ -6,6 +6,7 @@ public class PauseManager : MonoBehaviour
 {
     public LevelsList levelsList;
     public GameObject winMenu;
+    public GameObject pauseMenu;
     public bool isPaused { 
         get {
             return paused;
@@ -28,12 +29,30 @@ public class PauseManager : MonoBehaviour
     }
 
     public void PauseMenu() {
-        PauseGame();
-        GetComponent<AudioSource>().Play();
+        if (!(paused == true && pauseMenu.activeInHierarchy == false))
+        {
+            PauseGame();
+            if (paused)
+            {
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                pauseMenu.SetActive(false);
+            }
+            GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void MainMenu() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
     public void PauseGame() {
         paused = !paused;
+        if (paused == false && canUnpause == false) {
+            paused = false;
+        }
         if (paused)
         {
             Cursor.visible = true;

@@ -90,7 +90,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.05f);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;
-        Time.timeScale = 1;
+        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
+        {
+            Time.timeScale = 1;
+        }
         GetComponent<SpriteRenderer>().sprite = initSprite;
     }
 
