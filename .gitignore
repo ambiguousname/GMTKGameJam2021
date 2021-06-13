@@ -3,7 +3,11 @@
 */[Oo]bj/
 */[Bb]uild/
 */[Bb]uilds/
+/Builds/Windows/*
+/Builds/Mac/*
+/Builds/Linux/*
 */Assets/AssetStoreTools*
+*.zip
 
 # Visual Studio cache directory
 */.vs/

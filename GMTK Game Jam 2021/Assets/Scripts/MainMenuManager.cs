@@ -19,6 +19,10 @@ public class MainMenuManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 
+    public void QuitGame() {
+        Application.Quit();
+    }
+
     public void MainMenu() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
