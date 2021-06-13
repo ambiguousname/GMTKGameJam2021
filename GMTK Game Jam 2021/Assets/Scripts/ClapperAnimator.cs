@@ -51,7 +51,7 @@ public class ClapperAnimator : MonoBehaviour
                 {
                     this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 10f * Time.unscaledDeltaTime));
                 }
-                this.transform.position -= Time.unscaledDeltaTime * new Vector3(0, 500.0f, 0);
+                this.transform.position -= Time.unscaledDeltaTime * new Vector3(0, 800.0f, 0);
                 if (this.transform.position.y < -Screen.height) {
                     isRunning = false;
                 }
