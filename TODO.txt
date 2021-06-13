@@ -1,8 +1,3 @@
-Goals Leading Up To Lunch:
-
-Goals Leading Up To Dinner:
-
-Goals for the End of the Day:
-Game Juice (Main character Emotions, like smiling when the camera flashes on them)(Fade In/Out for menus)
+Game Juice (Fade In/Out for menus)
 Add Enemy that flees from camera, add them into a few levels?
 Itch.io page and submission

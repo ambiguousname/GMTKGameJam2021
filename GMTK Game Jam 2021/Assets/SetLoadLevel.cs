@@ -24,6 +24,7 @@ public class SetLoadLevel : MonoBehaviour
     void StartLevel(int index) {
         GetComponent<AudioSource>().Play();
         TakeCount.currentScene = index + 1;
+        TakeCount.currentTake = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         UnityEngine.SceneManagement.SceneManager.LoadScene(levels.levelsList[index]);

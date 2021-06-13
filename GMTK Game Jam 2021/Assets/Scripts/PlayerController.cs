@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     Sprite initSprite;
     public Sprite hitSprite;
+    public Sprite grumpySprite;
+    public Sprite happySprite;
     public float currentAccuracy
     {
         get
@@ -102,6 +104,14 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
         {
+            if (gameCamera.flashing) {
+                GetComponent<SpriteRenderer>().sprite = happySprite;
+            } else if (ObjectInFrame(this.transform.position))
+            {
+                GetComponent<SpriteRenderer>().sprite = grumpySprite;
+            } else {
+                GetComponent<SpriteRenderer>().sprite = initSprite;
+            }
             currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
             var cameraPos = gameCamera.GetCameraPos();
             var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;

@@ -18,7 +18,7 @@ public class LoseText : MonoBehaviour
             "I feel asleep, but my kids seemed to like it, so it's good enough for me.", "I finally learned what it means to Die Hard with a Vengeance (1995).", "Stanley Kubrick was a director.", 
             "Movies are now obsolete. The future is squares shooting at other squares.", "Better than the Emoji Movie."};
         } else {
-            ratings = new string[] { "1/10", "2/10", "100/5", "0/10", ":(", "☆☆☆☆☆", "2 Thumbs Down", "1 Middle Finger", "F-" };
+            ratings = new string[] { "1/10", "2/10", "100/5", "0/10", ":(", "☆☆☆☆☆", "2 Thumbs Down", "1 Shriveled Finger", "F-" };
             descriptions = new string[] { "The best thing I can say is that it was short.", "The main character died, and we were all left waiting in the audience for about an hour or so.",
                 "When it ended, I saw my own negative review being shown on the screen. I think I'm trapped in some sort of nightmarish-", "So bad it's bad.", "Makes heavy use of ugly CGI.",
             "The camera shake was intense. Perhaps too intense.", "I don't want to talk about it.", "Out of all the movies I've seen by this director, this one was by far the worst.",

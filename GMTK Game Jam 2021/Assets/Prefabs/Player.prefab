@@ -141,6 +141,8 @@ MonoBehaviour:
   maxAccuracy: 100
   startAccuracy: 50
   hitSprite: {fileID: 21300000, guid: 397db8278703c0740987360dd4852aa5, type: 3}
+  grumpySprite: {fileID: -2398867748993389505, guid: a124318d6f10cd144aacd191cac6eaf1, type: 3}
+  happySprite: {fileID: 3162788007219895803, guid: a124318d6f10cd144aacd191cac6eaf1, type: 3}
   accuracy: 0
   distanceTimerInit: 5
   pickupUpdate: 0

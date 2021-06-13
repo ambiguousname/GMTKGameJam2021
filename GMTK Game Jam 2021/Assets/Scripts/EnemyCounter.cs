@@ -10,10 +10,5 @@ public class EnemyCounter : MonoBehaviour
     {
         var eCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         GetComponentInChildren<Text>().text = "" + eCount;
-        if (eCount <= 0)
-        {
-            TakeCount.currentScene += 1;
-            TakeCount.currentTake = 0;
-        }
     }
 }

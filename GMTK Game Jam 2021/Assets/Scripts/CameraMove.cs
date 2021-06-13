@@ -14,6 +14,7 @@ public class CameraMove : MonoBehaviour
     public float sizeAccuracy = 80.0f;
     public Camera MainCamera;
     private Vector3 baseScale;
+    public bool flashing;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class CameraMove : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) && img.color.a <= 0.38f)
             {
+                flashing = true;
                 GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                 GetComponent<AudioSource>().Play();
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
@@ -76,6 +78,9 @@ public class CameraMove : MonoBehaviour
             if (img.color.a > 0.38f)
             {
                 img.color = new Color(img.color.r - 0.7f * Time.deltaTime, img.color.g - 0.7f * Time.deltaTime, img.color.b - 0.7f * Time.deltaTime, img.color.a - 0.7f * Time.deltaTime);
+                if (img.color.a <= 0.38f) {
+                    flashing = false;
+                }
             }
             this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
             var scaleChange = Input.GetAxis("Mouse ScrollWheel");

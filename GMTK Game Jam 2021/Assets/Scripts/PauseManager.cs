@@ -86,6 +86,7 @@ public class PauseManager : MonoBehaviour
             }
         }
         TakeCount.currentScene = curr_scene + 1;
+        TakeCount.currentTake = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelsList.levelsList[curr_scene + 1]);
     }
 }
