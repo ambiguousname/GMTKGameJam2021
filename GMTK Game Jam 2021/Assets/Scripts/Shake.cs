@@ -16,6 +16,9 @@ public class Shake : MonoBehaviour
         {
             this.transform.localPosition = startTransform + Random.insideUnitSphere * shakeAmount;
             shake -= Time.unscaledDeltaTime * decreaseFactor;
+            if (shake <= 0) {
+                this.transform.localPosition = startTransform;
+            }
         } else {
             startTransform = this.transform.localPosition;
             shake = 0;
