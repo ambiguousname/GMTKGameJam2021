@@ -64,6 +64,9 @@ public class PlayerController : MonoBehaviour
         accuracy = startAccuracy;
         timerBaseColor = timerSlider.color;
         initScale = this.transform.localScale;
+        if (Application.isEditor) {
+            Application.targetFrameRate = 60;
+        }
     }
 
     public void SetPickup(Pickup newPickup) {
@@ -127,10 +130,8 @@ public class PlayerController : MonoBehaviour
                 if (!Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
                 {
                     playerRigidbody.AddForce(target * playerSpeed);
-                    this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(initScale.x * Mathf.Clamp(Mathf.Abs(target.x) + 1, 0.25f, 1.75f), initScale.y * Mathf.Clamp(Mathf.Abs(target.y) + 1, 0.25f, 1.75f), initScale.z), Time.deltaTime);
                 }
             }
-            this.transform.localScale = Vector3.Lerp(this.transform.localScale, initScale, Time.deltaTime);
             if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit)
             {
                 distanceTimer += Time.deltaTime;

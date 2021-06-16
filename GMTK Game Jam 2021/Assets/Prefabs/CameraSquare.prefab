@@ -93,11 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a63d5f91087de48ae3444997f979fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 3
-  minSize: 1
-  currentSize: 1.5
+  maxSize: 2.5
+  minSize: 1.5
+  currentSize: 2
   sizeAccuracy: 50
   MainCamera: {fileID: 0}
+  flashing: 0
 --- !u!82 &7097510851073059517
 AudioSource:
   m_ObjectHideFlags: 0
