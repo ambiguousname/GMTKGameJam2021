@@ -97,6 +97,7 @@ MonoBehaviour:
   minSize: 1.5
   currentSize: 2
   sizeAccuracy: 50
+  cameraSpeed: 30
   MainCamera: {fileID: 0}
   flashing: 0
 --- !u!82 &7097510851073059517
