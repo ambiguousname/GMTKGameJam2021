@@ -102,6 +102,10 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = initSprite;
     }
 
+    bool isOutsideRect(Vector3 position, Vector3 target, Vector2 size) {
+        return (Mathf.Abs(position.x - target.x) > size.x || Mathf.Abs(position.y - target.y) > size.y);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -117,25 +121,27 @@ public class PlayerController : MonoBehaviour
             }
             currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
             var cameraPos = gameCamera.GetCameraPos();
+            var playerPos = gameCamera.MainCamera.WorldToScreenPoint(this.transform.position);
+            var cameraRect = gameCamera.GetComponent<RectTransform>().rect;
             var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
             target.Normalize();
             var initTimer = distanceTimer;
-            if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > 5 / 2 * GetComponent<Rigidbody2D>().drag)
+            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(cameraRect.width/2, cameraRect.height/2)))
             {
-                if (distanceTimer > 0 && Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) > gameCamera.currentSize)
+                if (distanceTimer > 0)
                 {
                     distanceTimer -= Time.deltaTime;
                     timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
                 }
-                if (!Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
-                {
-                    playerRigidbody.AddForce(target * playerSpeed);
-                }
-            }
-            if (Vector2.Distance(this.transform.position, new Vector3(cameraPos.x, cameraPos.y)) <= gameCamera.currentSize && distanceTimer > 0 && distanceTimer < distanceTimerInit)
+            } else if (distanceTimer > 0 && distanceTimer < distanceTimerInit)
             {
                 distanceTimer += Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
+            }
+
+            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(cameraRect.width/8, cameraRect.height/8)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+            {
+                playerRigidbody.AddForce(target * playerSpeed);
             }
             if (initTimer != distanceTimer && distanceTimer > 0)
             {
