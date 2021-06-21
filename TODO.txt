@@ -1,3 +1,2 @@
 Fix Aim/Accuracy
-Fix Player Speed (Make it seem like the player is easier to control)
 New Enemy Type?
