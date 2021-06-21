@@ -1,4 +1,5 @@
 Make player less accurate when zoomed out
 Fix bug where player doesn't flash white and pause on hit.
-Enemies have really short range?
+Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
+some playtesting)
 New Enemy Type?
