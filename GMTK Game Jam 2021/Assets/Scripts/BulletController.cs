@@ -31,12 +31,15 @@ public class BulletController : MonoBehaviour
         progenitorTag = spawnerTagName;
         bDamage = damage;
         this.transform.position = shootFrom;
+        // Let's just use hitscan.
+        var random = Random.Range(0, 100);
         var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
-        var angle = Vector3.Angle(target, this.transform.position) * Mathf.Deg2Rad;
-        Debug.DrawRay(shootFrom, target, Color.red);
-        target += (1 - accuracy/100) * new Vector3(Mathf.Cos(angle) * Random.Range(-800/accuracy, 800/accuracy), Mathf.Sin(angle) * Random.Range(-800/accuracy, 800/accuracy ));
-        Debug.DrawRay(shootFrom, target);
         target.Normalize();
+        if (Mathf.Abs(random) > accuracy) // So if we detect a "miss", our shots go flying.
+        {
+            var angle = Vector3.Angle(target, this.transform.position) * Mathf.Deg2Rad;
+            target += new Vector3(random * Mathf.Cos(angle), random * Mathf.Sin(angle));
+        }
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
     }
