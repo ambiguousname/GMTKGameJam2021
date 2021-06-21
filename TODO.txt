@@ -1,5 +1,4 @@
-Fix Aim/Accuracy
-Fix bug where sniper shots miss even after direct hit
+Make player less accurate when zoomed out
 Fix bug where player doesn't flash white and pause on hit.
 Enemies have really short range?
 New Enemy Type?
