@@ -1,4 +1,3 @@
 Fix Aim/Accuracy
 Fix Player Speed (Make it seem like the player is easier to control)
-Fix how physical camera size is percieved by the code that decrements the game's timer.
 New Enemy Type?
