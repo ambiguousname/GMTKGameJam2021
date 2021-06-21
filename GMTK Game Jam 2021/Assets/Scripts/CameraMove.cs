@@ -12,6 +12,9 @@ public class CameraMove : MonoBehaviour
     /// How much the camera's size buffs player accuracy and debuffs enemy accuracy. (Calculation is accuracy - sizeAccuracy * (1/currentSize)))
     /// </summary>
     public float sizeAccuracy = 80.0f;
+
+    public float cameraSpeed = 3.0f;
+
     public Camera MainCamera;
     private Vector3 baseScale;
     public bool flashing;
@@ -41,7 +44,8 @@ public class CameraMove : MonoBehaviour
         {
             if (background.GetComponent<SpriteRenderer>().bounds.Contains(new Vector3(MainCamera.transform.position.x + nextPosition.x, MainCamera.transform.position.y + nextPosition.y, background.transform.position.z)))
             {
-                MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, MainCamera.transform.position + nextPosition, 5 * Time.deltaTime);
+                MainCamera.GetComponent<Rigidbody2D>().AddForce(nextPosition * cameraSpeed);
+                //MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, MainCamera.transform.position + nextPosition, cameraSpeed * Time.deltaTime);
                 break;
             }
         }
@@ -94,19 +98,19 @@ public class CameraMove : MonoBehaviour
                 currentSize += scaleChange;
             }
             this.transform.localScale = baseScale * currentSize;
-            if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 3)
+            if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 8)
             {
                 MoveCamera(new Vector3(0, 3));
             }
-            if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 3)
+            if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 8)
             {
                 MoveCamera(new Vector3(0, -3));
             }
-            if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 3)
+            if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 8)
             {
                 MoveCamera(new Vector3(3, 0));
             }
-            if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 3)
+            if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 8)
             {
                 MoveCamera(new Vector3(-3, 0));
             }

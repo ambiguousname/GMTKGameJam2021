@@ -1261,6 +1261,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2285471157922469203, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5492548937961927274, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
       propertyPath: m_LocalScale.x
       value: 61.10269
@@ -1365,6 +1369,14 @@ PrefabInstance:
       propertyPath: NextScene
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 5492548939939966103, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492548939939966103, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49.999996
+      objectReference: {fileID: 0}
     - target: {fileID: 9001913577059094150, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 394.5513
@@ -1390,6 +1402,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5492548939957622514, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
   m_PrefabInstance: {fileID: 901818952}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019369923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5492548938634992266, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
+  m_PrefabInstance: {fileID: 901818952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1019369929
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019369923}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &1101899389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492548939927198819, guid: 89b7791f1c2117347b45c32942194ac6, type: 3}
