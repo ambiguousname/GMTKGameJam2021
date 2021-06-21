@@ -258,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponSpeed
-      value: 5000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy

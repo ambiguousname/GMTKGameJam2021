@@ -5,13 +5,13 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     TrailRenderer trail;
-    bool canHit;
+    bool canHit = true;
     string progenitorTag;
     float bDamage;
     // Start is called before the first frame update
     void Start()
     {
-        canHit = true;
+        //canHit = true;
         trail = GetComponent<TrailRenderer>();
     }
 
@@ -34,12 +34,14 @@ public class BulletController : MonoBehaviour
         // Let's just use hitscan.
         var random = Random.Range(0, 100);
         var target = new Vector3(positionToShoot.x, positionToShoot.y, positionToShoot.z) - shootFrom;
-        target.Normalize();
         if (Mathf.Abs(random) > accuracy) // So if we detect a "miss", our shots go flying.
         {
+            Debug.Log("Miss " + accuracy);
             var angle = Vector3.Angle(target, this.transform.position) * Mathf.Deg2Rad;
-            target += new Vector3(random * Mathf.Cos(angle), random * Mathf.Sin(angle));
+            target += new Vector3(Random.Range(1, 3f) * Random.Range(-1, 1) * Mathf.Cos(angle), Random.Range(1f, 3f) * Random.Range(-1, 1) * Mathf.Sin(angle));
+            canHit = false;
         }
+        target.Normalize();
         this.GetComponent<Rigidbody2D>().AddForce(target * speed);
         GetComponent<TrailRenderer>().material.SetColor("_Color", tint);
     }
