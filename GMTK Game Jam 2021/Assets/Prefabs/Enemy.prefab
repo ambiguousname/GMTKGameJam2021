@@ -130,7 +130,7 @@ MonoBehaviour:
   player: {fileID: 0}
   fireTimerLength: 1
   bulletsPerSecond: 1
-  weaponRange: 10
+  weaponRange: 20
   weaponSpeed: 500
   minAccuracy: 5
   maxAccuracy: 90

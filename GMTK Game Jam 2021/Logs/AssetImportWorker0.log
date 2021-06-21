@@ -2184,3 +2184,96 @@ System memory in use after: 100.7 MB.
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2990.
 Total: 2.068300 ms (FindLiveObjects: 0.209800 ms CreateObjectMapping: 0.072500 ms MarkObjects: 1.689500 ms  DeleteObjects: 0.095500 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004629 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.235 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.7 MB.
+System memory in use after: 100.8 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2994.
+Total: 2.010800 ms (FindLiveObjects: 0.221000 ms CreateObjectMapping: 0.084400 ms MarkObjects: 1.614000 ms  DeleteObjects: 0.090500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 422.382736 seconds.
+  path: Assets/Scripts/PickupData/Pistol.asset
+  artifactKey: Guid(ebe732e8e4f6e5f468ccd879d5d56c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PickupData/Pistol.asset using Guid(ebe732e8e4f6e5f468ccd879d5d56c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c461097f3d954bb85d767e348ff88783') in 0.097465 seconds
+  Import took 0.100905 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.399315 seconds.
+  path: Assets/Scripts/PickupData/Pistol.asset
+  artifactKey: Guid(ebe732e8e4f6e5f468ccd879d5d56c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PickupData/Pistol.asset using Guid(ebe732e8e4f6e5f468ccd879d5d56c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '097cc16bf92dcfa02895826384dd66d5') in 0.015307 seconds
+  Import took 0.021324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.514963 seconds.
+  path: Assets/Scripts/PickupData/SMG.asset
+  artifactKey: Guid(04a52152cb490334e8b4cd9686883d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PickupData/SMG.asset using Guid(04a52152cb490334e8b4cd9686883d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecdbec1fbb8e703e4a83363c082abed3') in 0.007075 seconds
+  Import took 0.010404 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004365 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.048 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.7 MB.
+System memory in use after: 100.8 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2998.
+Total: 2.260400 ms (FindLiveObjects: 0.240500 ms CreateObjectMapping: 0.093300 ms MarkObjects: 1.820700 ms  DeleteObjects: 0.104900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004579 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.120 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.8 MB.
+System memory in use after: 100.8 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3002.
+Total: 2.557600 ms (FindLiveObjects: 0.215500 ms CreateObjectMapping: 0.082100 ms MarkObjects: 2.151400 ms  DeleteObjects: 0.107500 ms)
+

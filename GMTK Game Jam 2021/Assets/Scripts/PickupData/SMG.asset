@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rateOfFire: 4
   bulletsPerSecond: 0.3
-  range: 5
+  range: 8
   bulletSpeed: 1000
   pistolPrefab: {fileID: 5896954963323626313, guid: 174cf14769dcff040998b78b49b6b2e2, type: 3}
   bulletPrefab: {fileID: 2936819903926852095, guid: 747932b65eb03314cbb468fdaeb8a9cf, type: 3}
