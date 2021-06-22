@@ -86,13 +86,13 @@ public class PlayerController : MonoBehaviour
         distanceTimer -= damage;
         GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
         GetComponent<AudioSource>().Play();
-        GetComponent<SpriteRenderer>().sprite = hitSprite;
         StartCoroutine("HitTimer");
     }
 
     IEnumerator HitTimer() {
         Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(0.05f);
+        GetComponent<SpriteRenderer>().sprite = hitSprite;
+        yield return new WaitForSecondsRealtime(0.01f);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;
         if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
+        if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused && Time.timeScale != 0)
         {
             if (gameCamera.flashing) {
                 GetComponent<SpriteRenderer>().sprite = happySprite;
