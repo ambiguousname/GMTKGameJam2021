@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator HitTimer() {
         Time.timeScale = 0;
         GetComponent<SpriteRenderer>().sprite = hitSprite;
-        yield return new WaitForSecondsRealtime(0.01f);
+        yield return new WaitForSecondsRealtime(0.05f);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;
         if (!GameObject.Find("PauseManager").GetComponent<PauseManager>().isPaused)
