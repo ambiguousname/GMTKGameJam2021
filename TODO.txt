@@ -1,3 +1,4 @@
 Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
 some playtesting)
+Actual options menu (Music volume, sound effects volume, customize post processing?)
 New Enemy Type?
