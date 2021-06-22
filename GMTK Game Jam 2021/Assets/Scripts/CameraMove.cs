@@ -105,19 +105,19 @@ public class CameraMove : MonoBehaviour
                 currentSize += scaleChange;
             }
             this.transform.localScale = baseScale * currentSize;
-            if (this.transform.localPosition.y >= Screen.height / 16)
+            if (this.transform.localPosition.y >= Screen.height / 7)
             {
                 MoveCamera(new Vector3(0, 1));
             }
-            if (this.transform.localPosition.y <= -Screen.height / 16)
+            if (this.transform.localPosition.y <= -Screen.height / 7)
             {
                 MoveCamera(new Vector3(0, -1));
             }
-            if (this.transform.localPosition.x >= Screen.width / 16)
+            if (this.transform.localPosition.x >= Screen.width / 7)
             {
                 MoveCamera(new Vector3(1, 0));
             }
-            if (this.transform.localPosition.x <= -Screen.width / 16)
+            if (this.transform.localPosition.x <= -Screen.width / 7)
             {
                 MoveCamera(new Vector3(-1, 0));
             }

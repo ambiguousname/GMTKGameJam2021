@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
             var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
             target.Normalize();
             var initTimer = distanceTimer;
-            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(cameraRect.width/2, cameraRect.height/2)))
+            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(Screen.width/1000 * cameraRect.width/2, Screen.height /500 * cameraRect.height/2)))
             {
                 if (distanceTimer > 0)
                 {
@@ -138,8 +138,7 @@ public class PlayerController : MonoBehaviour
                 distanceTimer += Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
             }
-
-            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(cameraRect.width/8, cameraRect.height/8)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(Screen.width / 1000 * cameraRect.width / 8, Screen.height / 500 * cameraRect.height / 8)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
             {
                 playerRigidbody.AddForce(target * playerSpeed);
             }

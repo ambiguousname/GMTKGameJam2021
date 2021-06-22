@@ -1,3 +1,5 @@
+Most of these bugs might be screen-size specific.
+Fix bug where player doesn't regenerate even within a camera that's all zoomed out (Maximize on Play)
 Make it clearer that quit takes you to main menu
 Make it so audience engagement in tutorial doesn't cover everything.
 Make it clear in tutorial that you can use level select to skip difficult levels.
@@ -7,8 +9,6 @@ Fix bug where shots still hit even after enemies are dazed
 Larger enemy range on surrounded
 Scene doesn't increment bug?
 Dazing enemies doesn't capture all enemies within the camera?
-Most of these bugs might be screen-size specific.
-Fix bug where player doesn't regenerate even within a camera that's all zoomed out
 Make better tutorial corners
 Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
 some playtesting)
