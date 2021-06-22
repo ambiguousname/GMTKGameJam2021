@@ -113,7 +113,6 @@ public class CameraMove : MonoBehaviour
             {
                 MoveCamera(new Vector3(0, -1));
             }
-            Debug.Log(Screen.width + " " + this.transform.localPosition.x);
             if (this.transform.localPosition.x >= Screen.width / 16)
             {
                 MoveCamera(new Vector3(1, 0));
