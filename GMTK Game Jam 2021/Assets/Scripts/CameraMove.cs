@@ -51,7 +51,7 @@ public class CameraMove : MonoBehaviour
         {
             if (background.GetComponent<SpriteRenderer>().bounds.Contains(new Vector3(MainCamera.transform.position.x + nextPosition.x, MainCamera.transform.position.y + nextPosition.y, background.transform.position.z)))
             {
-                MainCamera.GetComponent<Rigidbody2D>().AddForce(nextPosition * cameraSpeed);
+                MainCamera.GetComponent<Rigidbody2D>().AddForce(nextPosition * cameraSpeed * Screen.width/1000);
                 //MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, MainCamera.transform.position + nextPosition, cameraSpeed * Time.deltaTime);
                 break;
             }
@@ -105,19 +105,20 @@ public class CameraMove : MonoBehaviour
                 currentSize += scaleChange;
             }
             this.transform.localScale = baseScale * currentSize;
-            if (this.transform.localPosition.y >= Screen.height / 2 - Screen.height / 4)
+            if (this.transform.localPosition.y >= Screen.height / 16)
             {
                 MoveCamera(new Vector3(0, 1));
             }
-            if (this.transform.localPosition.y <= -Screen.height / 2 + Screen.height / 4)
+            if (this.transform.localPosition.y <= -Screen.height / 16)
             {
                 MoveCamera(new Vector3(0, -1));
             }
-            if (this.transform.localPosition.x >= Screen.width / 2 - Screen.width / 4)
+            Debug.Log(Screen.width + " " + this.transform.localPosition.x);
+            if (this.transform.localPosition.x >= Screen.width / 16)
             {
                 MoveCamera(new Vector3(1, 0));
             }
-            if (this.transform.localPosition.x <= -Screen.width / 2 + Screen.width / 4)
+            if (this.transform.localPosition.x <= -Screen.width / 16)
             {
                 MoveCamera(new Vector3(-1, 0));
             }

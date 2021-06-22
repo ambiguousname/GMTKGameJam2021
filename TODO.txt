@@ -2,13 +2,12 @@ Use WASD to also move the screen around
 Make it clearer that quit takes you to main menu
 Make it so audience engagement in tutorial doesn't cover everything.
 Make it clear in tutorial that you can use level select to skip difficult levels.
-Make camera scrolling faster
 Make audience engagement more forgiving in tutorial
 Specify that the player will automatically fire at enemies that are within the **camera**
 Fix bug where shots still hit even after enemies are dazed
 Larger enemy range on surrounded
 Scene doesn't increment bug?
-Camera scrolling further from edges?
+Dazing enemies doesn't capture all enemies within the camera?
 Most of these bugs might be screen-size specific.
 Fix bug where player doesn't regenerate even within a camera that's all zoomed out
 Make better tutorial corners

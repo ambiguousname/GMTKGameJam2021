@@ -23,7 +23,7 @@ public class Charger : Enemy
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player" && fireTimer <= 0) {
-            if (Random.Range(0, 100) <= currentAccuracy)
+            if (Random.Range(1, 100) <= currentAccuracy)
             {
                 fireTimer = fireTimerLength;
                 player.GetComponent<PlayerController>().RegisterBulletHit(enemyDamage);
