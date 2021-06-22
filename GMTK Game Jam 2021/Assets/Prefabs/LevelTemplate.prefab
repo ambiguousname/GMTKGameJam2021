@@ -4293,10 +4293,6 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 5492548938634992265}
-    - target: {fileID: 6866951772389467394, guid: deab0262bcf85544e8137e03832f83dc, type: 3}
-      propertyPath: sizeAccuracy
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 6866951772389467422, guid: deab0262bcf85544e8137e03832f83dc, type: 3}
       propertyPath: m_Name
       value: CameraSquare
@@ -4480,15 +4476,11 @@ PrefabInstance:
       objectReference: {fileID: 5492548938700042082}
     - target: {fileID: 332952562518831699, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
       propertyPath: startAccuracy
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 332952562518831700, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 332952562518831701, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 332952562518831698, guid: a4d0b6267491f8744954e3cf44f2509d, type: 3}

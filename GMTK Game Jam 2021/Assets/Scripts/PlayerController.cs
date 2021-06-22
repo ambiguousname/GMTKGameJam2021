@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
             } else {
                 GetComponent<SpriteRenderer>().sprite = initSprite;
             }
-            currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / gameCamera.currentSize));
+            currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / (gameCamera.effectiveSize + 0.01f)));
             var cameraPos = gameCamera.GetCameraPos();
             var playerPos = gameCamera.MainCamera.WorldToScreenPoint(this.transform.position);
             var cameraRect = gameCamera.GetComponent<RectTransform>().rect;
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
                     visibleEnemies.Add(enemy);
                     enemy.GetComponent<Enemy>().isVisible = true;
                     var eComponent = enemy.GetComponent<Enemy>();
-                    eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / gameCamera.currentSize);
+                    eComponent.currentAccuracy = eComponent.startAccuracy - (gameCamera.sizeAccuracy * 1 / (gameCamera.effectiveSize + 0.01f));
                 }
                 else if (enemy.GetComponent<Enemy>().currentAccuracy != enemy.GetComponent<Enemy>().startAccuracy)
                 {

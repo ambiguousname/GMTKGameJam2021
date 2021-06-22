@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -627,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -858,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -943,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1028,7 +1028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1400,7 +1400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1550,7 +1550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1635,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
@@ -1720,7 +1720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: minAccuracy
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange

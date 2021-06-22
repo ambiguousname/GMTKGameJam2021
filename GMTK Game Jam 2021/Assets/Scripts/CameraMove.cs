@@ -8,6 +8,13 @@ public class CameraMove : MonoBehaviour
     public float maxSize = 2;
     public float minSize = 0.4f;
     public float currentSize = 1;
+
+    public float effectiveSize
+    {
+        get {
+            return (currentSize - minSize) / (maxSize - minSize);
+        }
+    }
     /// <summary>
     /// How much the camera's size buffs player accuracy and debuffs enemy accuracy. (Calculation is accuracy - sizeAccuracy * (1/currentSize)))
     /// </summary>
