@@ -1,13 +1,9 @@
-Tweak player camera size so that the camera is smaller (plus accuracy)
+Tweak accuracy?
 Make tougher enemies towards the later levels (add different colors to show more toughness) (Maybe
 starting around Hallway?)
 
-Make it clearer that quit takes you to main menu
-Make it so audience engagement in tutorial doesn't cover everything.
 Make it clear in tutorial that you can use level select to skip difficult levels.
-Make audience engagement more forgiving in tutorial
-Specify that the player will automatically fire at enemies that are within the **camera**
-Fix bug where shots still hit even after enemies are dazed
+
 Larger enemy range on surrounded
 Scene doesn't increment bug?
 Dazing enemies doesn't capture all enemies within the camera?

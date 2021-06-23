@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         get {
             if (stunTimer > 0)
             {
-                return 1;
+                return 0;
             }
             else
             {
@@ -84,6 +84,8 @@ public class Enemy : MonoBehaviour
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0)
             {
+                // Make sure that we won't fire immediately as stunning ends
+                fireTimer = fireTimerLength;
                 transform.GetChild(0).gameObject.SetActive(false);
             }
         }
