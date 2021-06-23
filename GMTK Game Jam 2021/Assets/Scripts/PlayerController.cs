@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
         pickupUpdate = true;
     }
 
-    public bool ObjectInFrame(Vector3 objectPosition) {
-        return gameCamera.GetInFrame(objectPosition);
+    public bool ObjectInFrame(Vector3 objectPosition, Vector2 scale) {
+        return gameCamera.GetInFrame(objectPosition, scale);
     }
 
     public void RegisterBulletHit(float damage) {
@@ -102,10 +102,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = initSprite;
     }
 
-    bool isOutsideRect(Vector3 position, Vector3 target, Vector2 size) {
-        return (Mathf.Abs(position.x - target.x) > size.x || Mathf.Abs(position.y - target.y) > size.y);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -113,7 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             if (gameCamera.flashing) {
                 GetComponent<SpriteRenderer>().sprite = happySprite;
-            } else if (ObjectInFrame(this.transform.position))
+            } else if (ObjectInFrame(this.transform.position, Vector2.one))
             {
                 GetComponent<SpriteRenderer>().sprite = grumpySprite;
             } else {
@@ -121,12 +117,10 @@ public class PlayerController : MonoBehaviour
             }
             currentAccuracy = startAccuracy + (gameCamera.sizeAccuracy * (1 / (gameCamera.effectiveSize + 0.01f)));
             var cameraPos = gameCamera.GetCameraPos();
-            var playerPos = gameCamera.MainCamera.WorldToScreenPoint(this.transform.position);
-            var cameraRect = gameCamera.GetComponent<RectTransform>().rect;
             var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
             target.Normalize();
             var initTimer = distanceTimer;
-            if (!ObjectInFrame(this.transform.position))
+            if (!ObjectInFrame(this.transform.position, Vector2.one))
             {
                 if (distanceTimer > 0)
                 {
@@ -138,7 +132,7 @@ public class PlayerController : MonoBehaviour
                 distanceTimer += Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
             }
-            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(Screen.width / 1000 * cameraRect.width / 8, Screen.height / 500 * cameraRect.height / 8)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+            if (!ObjectInFrame(this.transform.position, new Vector2(0.8f, 0.8f)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
             {
                 playerRigidbody.AddForce(target * playerSpeed);
             }
@@ -157,7 +151,7 @@ public class PlayerController : MonoBehaviour
             var visibleEnemies = new List<GameObject>();
             foreach (GameObject enemy in enemies)
             {
-                if (ObjectInFrame(enemy.transform.position))
+                if (ObjectInFrame(enemy.transform.position, Vector2.one))
                 {
                     visibleEnemies.Add(enemy);
                     enemy.GetComponent<Enemy>().isVisible = true;

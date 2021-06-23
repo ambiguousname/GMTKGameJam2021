@@ -38,12 +38,11 @@ public class CameraMove : MonoBehaviour
         return MainCamera.ScreenToWorldPoint(this.transform.position);
     }
 
-    public bool GetInFrame(Vector3 position) {
-        // UGH, IT'S THE STUPID CANVAS SCALER.
+    public bool GetInFrame(Vector3 position, Vector2 scale) {
         var localPos = MainCamera.WorldToScreenPoint(position);
         var rTransform = GetComponent<RectTransform>();
         var rect = rTransform.rect;
-        var newRect = new Rect(this.transform.position.x - (rect.width/2), this.transform.position.y - (rect.height/2), rect.width, rect.height);
+        var newRect = new Rect(this.transform.position.x - (scale.x * rect.width/2), this.transform.position.y - (scale.y * rect.height/2), rect.width, rect.height);
         return newRect.Contains(localPos);
     }
 
@@ -82,7 +81,7 @@ public class CameraMove : MonoBehaviour
                 var enemies = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach (GameObject enemy in enemies)
                 {
-                    if (GetInFrame(enemy.transform.position))
+                    if (GetInFrame(enemy.transform.position, Vector2.one))
                     {
                         enemy.GetComponent<Enemy>().SetStunned();
                     }
