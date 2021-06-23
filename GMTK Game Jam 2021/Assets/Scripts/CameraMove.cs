@@ -35,14 +35,16 @@ public class CameraMove : MonoBehaviour
     }
 
     public Vector3 GetCameraPos() {
-        return this.transform.position;
+        return MainCamera.ScreenToWorldPoint(this.transform.position);
     }
 
     public bool GetInFrame(Vector3 position) {
         // UGH, IT'S THE STUPID CANVAS SCALER.
-        var rTransform = GetComponent<RectTransform>().rect;
-        var newRect = new Rect(this.transform.position.x - (rTransform.width/2), this.transform.position.y - (rTransform.height/2), rTransform.width, rTransform.height);
-        return newRect.Contains(position);
+        var localPos = MainCamera.WorldToScreenPoint(position);
+        var rTransform = GetComponent<RectTransform>();
+        var rect = rTransform.rect;
+        var newRect = new Rect(this.transform.position.x - (rect.width/2), this.transform.position.y - (rect.height/2), rect.width, rect.height);
+        return newRect.Contains(localPos);
     }
 
     public void MoveCamera(Vector3 nextPosition) {
@@ -93,7 +95,7 @@ public class CameraMove : MonoBehaviour
                     flashing = false;
                 }
             }
-            var pos = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var pos = Input.mousePosition;
             this.transform.position = new Vector3(pos.x, pos.y, 1.0f);
             var scaleChange = Input.GetAxis("Mouse ScrollWheel");
             currentSize -= scaleChange;
