@@ -23,26 +23,26 @@ public class CameraMove : MonoBehaviour
     public float cameraSpeed = 3.0f;
 
     public Camera MainCamera;
-    private Vector3 baseScale;
+    private Vector2 baseScale;
     public bool flashing;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-        baseScale = this.transform.localScale;
+        var rect = GetComponent<RectTransform>();
+        baseScale = rect.sizeDelta;
     }
 
     public Vector3 GetCameraPos() {
-        return MainCamera.ScreenToWorldPoint(this.transform.position);
+        return this.transform.position;
     }
 
     public bool GetInFrame(Vector3 position) {
-        var localPos = MainCamera.WorldToScreenPoint(position);
-        var testPos = new Vector3(localPos.x, localPos.y, -1.0f);
+        // UGH, IT'S THE STUPID CANVAS SCALER.
         var rTransform = GetComponent<RectTransform>().rect;
-        var newRect = new Rect(this.transform.position.x - (rTransform.width * currentSize/2), this.transform.position.y - (rTransform.height * currentSize / 2), rTransform.width * currentSize, rTransform.height * currentSize);
-        return newRect.Contains(testPos);
+        var newRect = new Rect(this.transform.position.x - (rTransform.width/2), this.transform.position.y - (rTransform.height/2), rTransform.width, rTransform.height);
+        return newRect.Contains(position);
     }
 
     public void MoveCamera(Vector3 nextPosition) {
@@ -93,7 +93,8 @@ public class CameraMove : MonoBehaviour
                     flashing = false;
                 }
             }
-            this.transform.position = Input.mousePosition + new Vector3(0, 0, -1);
+            var pos = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+            this.transform.position = new Vector3(pos.x, pos.y, 1.0f);
             var scaleChange = Input.GetAxis("Mouse ScrollWheel");
             currentSize -= scaleChange;
             if (Vector3.Magnitude(baseScale * currentSize) > Vector3.Magnitude(baseScale * maxSize))
@@ -104,7 +105,8 @@ public class CameraMove : MonoBehaviour
             {
                 currentSize += scaleChange;
             }
-            this.transform.localScale = baseScale * currentSize;
+            var rect = GetComponent<RectTransform>();
+            rect.sizeDelta = baseScale * currentSize;
             if (this.transform.localPosition.y >= Screen.height / 7)
             {
                 MoveCamera(new Vector3(0, 1));

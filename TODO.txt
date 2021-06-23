@@ -1,4 +1,5 @@
-Most of these bugs might be screen-size specific.
+Tweak size and fix bugs with new camera set-up.
+
 Fix bug where player doesn't regenerate even within a camera that's all zoomed out (Maximize on Play)
 Tweak player camera size so that the camera is smaller (plus accuracy)
 Make tougher enemies towards the later levels (add different colors to show more toughness) (Maybe
@@ -17,4 +18,6 @@ Make better tutorial corners
 Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
 some playtesting)
 Actual options menu (Music volume, sound effects volume, customize post processing?)
-New Enemy Type?
+Enemy that runs away from your camera
+Enemy or powerup that when you're hit, staying in the camera damages you.
+Enemy that chases you and shoots bullets at a distance (Pathfinding might be good)?

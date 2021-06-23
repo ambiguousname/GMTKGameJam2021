@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
             var target = new Vector3(cameraPos.x, cameraPos.y) - this.transform.position;
             target.Normalize();
             var initTimer = distanceTimer;
-            if (isOutsideRect(playerPos, gameCamera.transform.position, gameCamera.currentSize * new Vector2(Screen.width/1000 * cameraRect.width/2, Screen.height /500 * cameraRect.height/2)))
+            if (!ObjectInFrame(this.transform.position))
             {
                 if (distanceTimer > 0)
                 {
