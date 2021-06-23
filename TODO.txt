@@ -1,4 +1,3 @@
-Tweak accuracy?
 Make tougher enemies towards the later levels (add different colors to show more toughness) (Maybe
 starting around Hallway?)
 
