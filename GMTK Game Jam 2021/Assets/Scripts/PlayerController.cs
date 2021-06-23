@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
                 distanceTimer += Time.deltaTime;
                 timerSlider.transform.localScale = new Vector2(distanceTimer / distanceTimerInit, timerSlider.transform.localScale.y);
             }
-            if (!ObjectInFrame(this.transform.position, new Vector2(0.8f, 0.8f)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
+            if (!ObjectInFrame(this.transform.position, new Vector2(0.5f, 0.5f)) && !Input.GetMouseButton(1) && playerRigidbody.velocity.magnitude < maxSpeed)
             {
                 playerRigidbody.AddForce(target * playerSpeed);
             }

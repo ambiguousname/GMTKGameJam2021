@@ -42,7 +42,7 @@ public class CameraMove : MonoBehaviour
         var localPos = MainCamera.WorldToScreenPoint(position);
         var rTransform = GetComponent<RectTransform>();
         var rect = rTransform.rect;
-        var newRect = new Rect(this.transform.position.x - (scale.x * rect.width/2), this.transform.position.y - (scale.y * rect.height/2), rect.width, rect.height);
+        var newRect = new Rect(this.transform.position.x - (scale.x * rect.width/2), this.transform.position.y - (scale.y * rect.height/2), rect.width * scale.x, rect.height * scale.y);
         return newRect.Contains(localPos);
     }
 
