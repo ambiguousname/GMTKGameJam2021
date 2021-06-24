@@ -21,10 +21,10 @@ public class LoseText : MonoBehaviour
             ratings = new string[] { "1/10", "2/10", "100/5", "0/10", ":(", "Boo!", "2 Thumbs Down", "1 Shriveled Finger", "F-" };
             descriptions = new string[] { "The best thing I can say is that it was short.", "The main character died, and we were all left waiting in the audience for about an hour or so.",
                 "When it ended, I saw my own negative review being shown on the screen. I think I'm trapped in some sort of nightmarish-", "So bad it's bad.", "Makes heavy use of ugly CGI.",
-            "The camera shake was intense. Perhaps too intense.", "I don't want to talk about it.", "Out of all the movies I've seen by this director, this one was by far the worst.",
+                "The camera shake was intense. Perhaps too intense.", "I don't want to talk about it.", "Out of all the movies I've seen by this director, this one was by far the worst.",
                 "This movie aspires for mediocrity... and almost achieves it.", "The movie was stupendously, horrifically [...] good.",
                 "I think I hit myself over the head with a hammer. What's going on? Did I watch a movie recently?", "I am completely disappointed in whoever made this.", "Ha ha ha ha ha... ha... ha.",
-            "It would have been better if they had let me shoot the actors personally."};
+                "It would have been better if they had let me shoot the actors personally."};
         }
         var randomone = Random.Range(0, ratings.Length);
         var randomtwo = Random.Range(0, reviewerNames.Length);
