@@ -2,5 +2,6 @@ Things for later updates(?):
 
 Actual options menu (Music volume, sound effects volume, customize post processing?)
 Enemy that runs away from your camera
-Enemy or powerup that when you're hit, staying in the camera damages you.
+Enemy or powerup that when you're hit, staying in the camera damages you, and staying
+out of the camera heals you.
 Enemy that chases you and shoots bullets at a distance (Pathfinding might be good)?

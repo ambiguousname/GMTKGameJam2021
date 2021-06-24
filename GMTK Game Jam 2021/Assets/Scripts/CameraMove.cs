@@ -39,6 +39,7 @@ public class CameraMove : MonoBehaviour
     }
 
     public bool GetInFrame(Vector3 position, Vector2 scale) {
+        scale *= this.transform.parent.GetComponent<Canvas>().scaleFactor;
         var localPos = MainCamera.WorldToScreenPoint(position);
         var rTransform = GetComponent<RectTransform>();
         var rect = rTransform.rect;
