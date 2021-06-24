@@ -18,7 +18,8 @@ public class OptionsManager : MonoBehaviour
             PlayerPrefs.SetFloat("musicVolume", 1.0f);
             PlayerPrefs.Save();
         }
-        displayUIToggle.GetComponent<Toggle>().isOn = PlayerPrefs.GetInt("displayUI") == 1;
+        Debug.Log(PlayerPrefs.GetInt("displayUI"));
+        displayUIToggle.GetComponent<Toggle>().isOn = PlayerPrefs.GetInt("displayUI") == 0;
         soundVolumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("soundVolume");
         musicVolumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("musicVolume");
     }
@@ -26,7 +27,7 @@ public class OptionsManager : MonoBehaviour
     public void DisplayUIToggle(Toggle change) {
         PlayerPrefs.SetInt("displayUI", (change.isOn == false)? 1 : 0);
         if (GameObject.Find("PauseManager")) {
-            GameObject.Find("PauseManager").GetComponent<PauseManager>().ToggleUIDisplay(change.isOn);
+            GameObject.Find("PauseManager").GetComponent<PauseManager>().ToggleUIDisplay(!change.isOn);
         }
     }
 

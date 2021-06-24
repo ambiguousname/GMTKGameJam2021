@@ -22,7 +22,7 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         paused = false;
-        ToggleUIDisplay((PlayerPrefs.GetInt("displayUI") == 0) ? false : true);
+        ToggleUIDisplay(PlayerPrefs.GetInt("displayUI") == 1);
         UpdateSFXVolume(PlayerPrefs.GetFloat("soundVolume"));
         if (GameObject.Find("Music"))
         {
@@ -41,7 +41,7 @@ public class PauseManager : MonoBehaviour
 
     public void ToggleUIDisplay(bool onOff)
     {
-        if (onOff)
+        if (!onOff)
         {
             timerDisplay.SetActive(false);
             audienceEngagement.SetActive(false);
