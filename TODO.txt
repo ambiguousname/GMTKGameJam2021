@@ -3,9 +3,14 @@ Update builds
 Things for later updates(?):
 Get fake camera to work in camera space to add post processing?
 Make the timer somehow more visually clear in cinematic mode?
-Spend a lot of time cleaning code.
+Spend a lot of time cleaning and fixing this code.
 Enemy that runs away from your camera
 Enemy or powerup that when you're hit, staying in the camera damages you, and staying
 out of the camera heals you.
 Enemy that chases you and shoots bullets at a distance (Pathfinding might be good)?
 New weapons?
+Weapon that shoots bouncing balls when you flash the camera.
+Ice that makes the protagonist slide all over.
+Conveyor belts that push the protagonist in one direction.
+Graphical overhaul
+Sound design overhaul
