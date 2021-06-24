@@ -114,6 +114,7 @@ public class Enemy : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().isKinematic = true;
             transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
             this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             GetComponent<ParticleSystem>().Play();
             yield return new WaitForSeconds(1f);

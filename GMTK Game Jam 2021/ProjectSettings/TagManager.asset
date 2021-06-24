@@ -9,6 +9,7 @@ TagManager:
   - Background
   - Wall
   - Music
+  - BackgroundTint
   layers:
   - Default
   - TransparentFX

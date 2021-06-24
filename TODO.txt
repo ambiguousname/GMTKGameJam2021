@@ -1,12 +1,6 @@
 Make tougher enemies towards the later levels (add different colors to show more toughness) (Maybe
 starting around Hallway?)
 
-Make it clear in tutorial that you can use level select to skip difficult levels.
-
-Larger enemy range on surrounded
-Scene doesn't increment bug?
-Dazing enemies doesn't capture all enemies within the camera?
-Make better tutorial corners
 Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
 some playtesting)
 
