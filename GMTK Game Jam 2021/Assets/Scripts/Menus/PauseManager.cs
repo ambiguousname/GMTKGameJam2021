@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject timerDisplay;
+    public GameObject audienceEngagement;
     public GameObject levelManager;
     public bool isPaused {
         get {
@@ -43,6 +44,7 @@ public class PauseManager : MonoBehaviour
         if (onOff)
         {
             timerDisplay.SetActive(false);
+            audienceEngagement.SetActive(false);
             levelManager.transform.GetChild(0).gameObject.SetActive(false);
             levelManager.transform.GetChild(1).gameObject.SetActive(false);
             if (levelManager.transform.GetChild(2)) {
