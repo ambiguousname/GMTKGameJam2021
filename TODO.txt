@@ -1,8 +1,8 @@
+Some more review text (remove the ones that don't appear)
+Get fake camera to work in camera space to add post processing?
 Update builds
 
 Things for later updates(?):
-Some more review text (remove the ones that don't appear)
-Get fake camera to work in camera space to add post processing?
 Make the timer somehow more visually clear in cinematic mode?
 Spend a lot of time cleaning code.
 Enemy that runs away from your camera
