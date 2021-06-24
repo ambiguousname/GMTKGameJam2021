@@ -39,6 +39,8 @@ public class ClapperAnimator : MonoBehaviour
                 this.transform.GetChild(1).rotation = Quaternion.Euler(new Vector3(currRotation.eulerAngles.x, currRotation.eulerAngles.y, currRotation.eulerAngles.z - 150 * Time.unscaledDeltaTime));
                 if (currRotation.eulerAngles.z <= 10)
                 {
+                    var volume = PlayerPrefs.GetFloat("soundVolume");
+                    GetComponent<AudioSource>().volume = volume;
                     GetComponent<AudioSource>().Play();
                     stage = "disappear";
                     GameObject.Find("PauseManager").GetComponent<PauseManager>().canUnpause = true;

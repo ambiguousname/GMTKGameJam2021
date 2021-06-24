@@ -9,6 +9,9 @@ public class EnemyCounter : MonoBehaviour
     void Update()
     {
         var eCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        GetComponentInChildren<Text>().text = "" + eCount;
+        if (transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            GetComponentInChildren<Text>().text = "" + eCount;
+        }
     }
 }

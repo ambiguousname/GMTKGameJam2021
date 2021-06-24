@@ -1,8 +1,10 @@
+Fix bug where "Audience Engagement" text shrinks
+Some more review text (remove the ones that don't appear)
+Get fake camera to work in camera space to add post processing?
 Update builds
 
 Things for later updates(?):
-
-Actual options menu (Music volume, sound effects volume, customize post processing?)
+Spend a lot of time cleaning code.
 Enemy that runs away from your camera
 Enemy or powerup that when you're hit, staying in the camera damages you, and staying
 out of the camera heals you.

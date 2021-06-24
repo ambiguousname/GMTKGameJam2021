@@ -9,6 +9,8 @@ public class PickupController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && !isDestroyed) {
+            var volume = PlayerPrefs.GetFloat("soundVolume");
+            GetComponent<AudioSource>().volume = volume;
             GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<PlayerController>().SetPickup(pickupType);
             isDestroyed = true;

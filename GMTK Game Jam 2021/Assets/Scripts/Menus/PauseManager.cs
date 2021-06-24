@@ -7,10 +7,13 @@ public class PauseManager : MonoBehaviour
     public LevelsList levelsList;
     public GameObject winMenu;
     public GameObject pauseMenu;
-    public bool isPaused { 
+    public GameObject optionsMenu;
+    public GameObject timerDisplay;
+    public GameObject levelManager;
+    public bool isPaused {
         get {
             return paused;
-        } 
+        }
     }
     public bool canUnpause = true;
     bool paused;
@@ -18,6 +21,13 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         paused = false;
+        ToggleUIDisplay((PlayerPrefs.GetInt("displayUI") == 0) ? false : true);
+        UpdateSFXVolume(PlayerPrefs.GetFloat("soundVolume"));
+        if (GameObject.Find("Music"))
+        {
+            var musicVolume = PlayerPrefs.GetFloat("musicVolume");
+            GameObject.Find("Music").GetComponent<MusicManager>().UpdateVolume(musicVolume);
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +36,28 @@ public class PauseManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             PauseMenu();
         }
+    }
+
+    public void ToggleUIDisplay(bool onOff)
+    {
+        if (onOff)
+        {
+            timerDisplay.SetActive(false);
+            levelManager.transform.GetChild(0).gameObject.SetActive(false);
+            levelManager.transform.GetChild(1).gameObject.SetActive(false);
+            if (levelManager.transform.GetChild(2)) {
+                levelManager.transform.GetChild(2).gameObject.SetActive(false);
+            }
+        }
+        else {
+            timerDisplay.SetActive(true);
+            levelManager.transform.GetChild(0).gameObject.SetActive(true);
+            levelManager.transform.GetChild(1).gameObject.SetActive(true);
+        }
+    }
+
+    public void UpdateSFXVolume(float volume) {
+        pauseMenu.GetComponent<AudioSource>().volume = volume;
     }
 
     public void PauseMenu() {
@@ -38,13 +70,41 @@ public class PauseManager : MonoBehaviour
             }
             else
             {
+                if (optionsMenu.activeInHierarchy)
+                {
+                    ToggleOptionsMenuVisibility();
+                }
                 pauseMenu.SetActive(false);
             }
+            var volume = PlayerPrefs.GetFloat("soundVolume");
+            GetComponent<AudioSource>().volume = volume;
             GetComponent<AudioSource>().Play();
         }
     }
 
+    public void TogglePauseMenuVisibility() {
+        if (pauseMenu.activeInHierarchy)
+        {
+            pauseMenu.SetActive(false);
+        }
+        else {
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    public void ToggleOptionsMenuVisibility() {
+        if (optionsMenu.activeInHierarchy)
+        {
+            optionsMenu.SetActive(false);
+            PlayerPrefs.Save();
+        }
+        else {
+            optionsMenu.SetActive(true);
+        }
+    }
+
     public void MainMenu() {
+        Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 

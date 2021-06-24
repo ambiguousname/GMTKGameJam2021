@@ -75,6 +75,8 @@ public class CameraMove : MonoBehaviour
             {
                 flashing = true;
                 GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                var volume = PlayerPrefs.GetFloat("soundVolume");
+                GetComponent<AudioSource>().volume = volume;
                 GetComponent<AudioSource>().Play();
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shakeAmount = 0.1f;
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake>().shake = 0.1f;

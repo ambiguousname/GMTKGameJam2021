@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
     public void RegisterBulletHit(float damage) {
         distanceTimer -= damage;
         GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+        var volume = PlayerPrefs.GetFloat("soundVolume");
+        GetComponent<AudioSource>().volume = volume;
         GetComponent<AudioSource>().Play();
         StartCoroutine("HitTimer");
     }

@@ -22,6 +22,8 @@ public class SetLoadLevel : MonoBehaviour
     }
 
     void StartLevel(int index) {
+        var volume = PlayerPrefs.GetFloat("soundVolume");
+        GetComponent<AudioSource>().volume = volume;
         GetComponent<AudioSource>().Play();
         TakeCount.currentScene = index + 1;
         TakeCount.currentTake = 0;

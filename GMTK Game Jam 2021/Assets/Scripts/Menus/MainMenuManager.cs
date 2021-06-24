@@ -26,4 +26,8 @@ public class MainMenuManager : MonoBehaviour
     public void MainMenu() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
+
+    public void Options() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Options");
+    }
 }
