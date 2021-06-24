@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -145,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -205,6 +209,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
@@ -469,7 +485,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -482,6 +498,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -542,6 +562,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
@@ -619,7 +651,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -632,6 +664,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -693,6 +729,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &968653593
@@ -704,7 +752,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -717,6 +765,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -777,6 +829,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
@@ -850,7 +914,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -863,6 +927,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -924,6 +992,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &1290346950
@@ -935,7 +1015,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -948,6 +1028,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1009,6 +1093,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &1522459059
@@ -1033,6 +1129,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1094,6 +1194,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &1627291407
@@ -1118,6 +1230,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1178,6 +1294,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
@@ -1392,7 +1520,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -1405,6 +1533,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1465,6 +1597,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
@@ -1542,7 +1686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -1555,6 +1699,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1616,6 +1764,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &1919539055
@@ -1640,6 +1800,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1701,6 +1865,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
 --- !u!1001 &2055252157
@@ -1712,7 +1888,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: enemyDamage
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: maxAccuracy
@@ -1725,6 +1901,10 @@ PrefabInstance:
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: weaponRange
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: weaponSpeed
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2024937955212900242, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: startAccuracy
@@ -1785,6 +1965,18 @@ PrefabInstance:
     - target: {fileID: 2024937955212900254, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
       propertyPath: m_Name
       value: Enemy (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37677062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746300945843248882, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ef94e046fcabd4ebcbb22985ee2b69, type: 3}

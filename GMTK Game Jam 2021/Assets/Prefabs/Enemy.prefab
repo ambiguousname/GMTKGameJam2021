@@ -33,8 +33,8 @@ Transform:
   m_LocalPosition: {x: -7.69, y: 0.4, z: 0}
   m_LocalScale: {x: 0.2076, y: 0.2076, z: 0.2076}
   m_Children:
-  - {fileID: 2682405077700193891}
   - {fileID: 8314427524873158499}
+  - {fileID: 2682405077700193891}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,7 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2936819903926852095, guid: 747932b65eb03314cbb468fdaeb8a9cf, type: 3}
   player: {fileID: 0}
-  difficultyTint: {r: 0, g: 0, b: 0, a: 0}
   fireTimerLength: 1
   bulletsPerSecond: 1
   weaponRange: 20
@@ -5019,11 +5018,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5713113952910531509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0.1}
-  m_LocalScale: {x: 4.2856, y: 4.2856, z: 4.2856}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalScale: {x: 5.1, y: 5.1, z: 4.2856}
   m_Children: []
   m_Father: {fileID: 2024937955212900253}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5746300945843248882
 SpriteRenderer:
@@ -5106,7 +5105,7 @@ Transform:
   m_LocalScale: {x: 2.630407, y: 2.630407, z: 2.630407}
   m_Children: []
   m_Father: {fileID: 2024937955212900253}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8396035043920549368
 SpriteRenderer:

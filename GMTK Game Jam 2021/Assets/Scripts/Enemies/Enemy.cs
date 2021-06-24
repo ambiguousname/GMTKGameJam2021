@@ -54,6 +54,8 @@ public class Enemy : MonoBehaviour
         initialSprite = GetComponent<SpriteRenderer>().sprite;
         player = GameObject.FindGameObjectWithTag("Player");
         accuracy = startAccuracy;
+        var main = GetComponent<ParticleSystem>().main;
+        main.startColor = transform.GetChild(1).GetComponent<SpriteRenderer>().color;
     }
 
     public void Fire(Vector3 positionToShoot) {
