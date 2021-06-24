@@ -1,9 +1,3 @@
-Make tougher enemies towards the later levels (add different colors to show more toughness) (Maybe
-starting around Hallway?)
-
-Add more enemies to levels and make them deal more damage (Game becomes slightly easier?)? (Maybe after
-some playtesting)
-
 Things for later updates(?):
 
 Actual options menu (Music volume, sound effects volume, customize post processing?)
