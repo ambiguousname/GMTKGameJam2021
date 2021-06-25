@@ -21,6 +21,13 @@ public class PauseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("displayUI"))
+        {
+            PlayerPrefs.SetInt("displayUI", 1);
+            PlayerPrefs.SetFloat("soundVolume", 1.0f);
+            PlayerPrefs.SetFloat("musicVolume", 1.0f);
+            PlayerPrefs.Save();
+        }
         paused = false;
         ToggleUIDisplay(PlayerPrefs.GetInt("displayUI") == 1);
         UpdateSFXVolume(PlayerPrefs.GetFloat("soundVolume"));
