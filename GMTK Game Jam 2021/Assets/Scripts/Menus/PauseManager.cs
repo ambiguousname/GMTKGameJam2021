@@ -53,8 +53,12 @@ public class PauseManager : MonoBehaviour
         }
         else {
             timerDisplay.SetActive(true);
+            audienceEngagement.SetActive(true);
             levelManager.transform.GetChild(0).gameObject.SetActive(true);
             levelManager.transform.GetChild(1).gameObject.SetActive(true);
+            if (levelManager.transform.GetChild(2)) {
+                levelManager.transform.GetChild(2).gameObject.SetActive(false);
+            }
         }
     }
 
